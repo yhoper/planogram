@@ -37,7 +37,7 @@ interface State {
 class NoCollisionLayout extends PureComponent<Props, State> {
   static defaultProps: Partial<Props> = {
     className: "layout",
-    items: 0,
+    items: 7, // Cambiado a 7 bloques
     cols: 12,
     rowHeight: 30,
     onLayoutChange: () => {},
@@ -48,7 +48,7 @@ class NoCollisionLayout extends PureComponent<Props, State> {
   constructor(props: Props) {
     super(props);
 
-    this.state = { layout: [] };
+    this.state = { layout: this.generateLayout() }; // Generar el layout inicial
   }
 
   generateDOM() {
@@ -62,15 +62,15 @@ class NoCollisionLayout extends PureComponent<Props, State> {
   }
 
   generateLayout(): LayoutItem[] {
-    const { items, cols } = this.props;
-    return _.map(_.range(items || 0), (i) => {
+    const { cols } = this.props;
+    return _.map(_.range(12), (i) => { // Generar exactamente 7 bloques
       const y = Math.ceil(Math.random() * 4) + 1;
       return {
         x: (i * 2) % (cols || 0),
         y: Math.floor(i / 6) * y,
         w: 2,
         h: y,
-        i: `item-${i}`,
+        i: `LG HTS-${i}R`,
         bgColor: "white",
       };
     });

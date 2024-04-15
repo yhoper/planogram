@@ -38,7 +38,7 @@ class NoCollisionLayout extends PureComponent<Props, State> {
   static defaultProps: Partial<Props> = {
     className: "layout",
     items: 0,
-    cols: 12,
+    cols: 24, // Cambiado a 24 columnas para ajustar el tamaño
     rowHeight: 30,
     onLayoutChange: () => {},
     verticalCompact: false,
@@ -48,7 +48,7 @@ class NoCollisionLayout extends PureComponent<Props, State> {
   constructor(props: Props) {
     super(props);
 
-    this.state = { layout: [] };
+    this.state = { layout: this.generateLayout() };
   }
 
   generateDOM() {
@@ -62,18 +62,57 @@ class NoCollisionLayout extends PureComponent<Props, State> {
   }
 
   generateLayout(): LayoutItem[] {
-    const { items, cols } = this.props;
-    return _.map(_.range(items || 0), (i) => {
-      const y = Math.ceil(Math.random() * 4) + 1;
-      return {
-        x: (i * 2) % (cols || 0),
-        y: Math.floor(i / 6) * y,
-        w: 2,
-        h: y,
-        i: `item-${i}`,
-        bgColor: "white",
-      };
-    });
+    return [
+      {
+        x: 0, // Primer bloque en la columna 1
+        y: 0,
+        w: 5,
+        h: 3,
+        i: "75QNED99SPA",
+        bgColor: "#a50034",
+      },
+      {
+        x: 3, // Segundo bloque en la columna 3
+        y: 0,
+        w: 4,
+        h: 2,
+        i: "SOUND. SH7Q",
+        bgColor: "#a50034",
+      },
+      {
+        x: 2, // Tercer bloque en la columna 6
+        y: 0,
+        w: 3,
+        h: 1,
+        i: "65QNED90SPA",
+        bgColor: "#a50034",
+      },
+      {
+        x: 12, // Cuarto bloque en la columna 12
+        y: 3, // Más abajo
+        w: 6,
+        h: 2,
+        i: "75QNED90SPA",
+        bgColor: "#a50034",
+      },
+      {
+        x: 0, // Quinto bloque en la columna 0 (al principio)
+        y: 3, // Más abajo
+        w: 3,
+        h: 8,
+        i: "65OLED G2",
+        bgColor: "#a50034",
+      },
+
+      {
+        x: 8, // Quinto bloque en la columna 0 (al principio)
+        y: 7, // Más abajo
+        w: 6,
+        h: 2,
+        i: "PARL.RP4",
+        bgColor: "#a50034",
+      },
+    ];
   }
 
   onLayoutChange(layout: RGL.Layout[]): void {
@@ -83,7 +122,7 @@ class NoCollisionLayout extends PureComponent<Props, State> {
       w: item.w,
       h: item.h,
       i: item.i,
-      bgColor: "white",
+      bgColor: 'item.bgColor',
     }));
     this.props.onLayoutChange!(newLayout);
   }
@@ -110,7 +149,7 @@ class NoCollisionLayout extends PureComponent<Props, State> {
           <button
             className="btnglobal color-w"
             id="lg"
-            onClick={() => this.addNewItem("#f0ece4")}
+            onClick={() => this.addNewItem("#a50034")}
           >
             <img src={lg} alt="" />
           </button>
@@ -144,8 +183,7 @@ class NoCollisionLayout extends PureComponent<Props, State> {
           </button>
         </div>
         <ReactGridLayout
-          cols={24}
-          width={5200}
+          cols={this.props.cols}
           layout={this.state.layout}
           onLayoutChange={(layout) => this.onLayoutChange(layout)}
           {...this.props}
