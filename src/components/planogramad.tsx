@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import ModalWithCarousel from "./modalWithCarousel";
 import _ from "lodash";
 import RGL, { WidthProvider } from "react-grid-layout";
+import { generateLayout } from "../utils/layoutUtils.tsx";
+import { LayoutItem } from "../interfaces/LayoutItem.tsx";
+import { Props } from "../interfaces/Props";
 import "react-grid-layout/css/styles.css";
 import "react-resizable/css/styles.css";
 import bose from "../assets/bose_logo.png";
@@ -14,25 +17,6 @@ import img_2 from "../assets/locales/img_2.jpg";
 import img_3 from "../assets/locales/img_3.jpg";
 
 const ReactGridLayout = WidthProvider(RGL);
-
-interface LayoutItem {
-  x: number;
-  y: number;
-  w: number;
-  h: number;
-  i: string;
-  bgColor: string;
-}
-
-interface Props {
-  className?: string;
-  items?: number;
-  cols?: number;
-  rowHeight?: number;
-  onLayoutChange?: (layout: LayoutItem[]) => void;
-  compactType?: "horizontal" | "vertical" | null;
-  preventCollision?: boolean;
-}
 
 const NoCollisionLayout: React.FC<Props> = ({
   className = "layout",
@@ -47,85 +31,6 @@ const NoCollisionLayout: React.FC<Props> = ({
   useEffect(() => {
     setLayout(generateLayout());
   }, []);
-
-  const generateLayout = (): LayoutItem[] => [
-    {
-      x: 0,
-      y: 0,
-      w: 4,
-      h: 3,
-      i: "R-1",
-      bgColor: "#a50034",
-    },
-    {
-      x: 4,
-      y: 0,
-      w: 8,
-      h: 2,
-      i: "R-2",
-      bgColor: "#a50034",
-    },
-    {
-      x: 12,
-      y: 0,
-      w: 6,
-      h: 4,
-      i: "R-3",
-      bgColor: "#a50034",
-    },
-    {
-      x: 18,
-      y: 0,
-      w: 10,
-      h: 1,
-      i: "SAMSUNG",
-      bgColor: "#a50034",
-    },
-
-    {
-      x: 38,
-      y: 0,
-      w: 10,
-      h: 1,
-      i: "PHILIPS",
-      bgColor: "#a50034",
-    },
-
-    {
-      x: 28,
-      y: 0,
-      w: 10,
-      h: 1,
-      i: "LG",
-      bgColor: "#a50034",
-    },
-
-    {
-      x: 19,
-      y: 1,
-      w: 4,
-      h: 1,
-      i: "R-4.A",
-      bgColor: "#a50034",
-    },
-    {
-      x: 19,
-      y: 2,
-      w: 4,
-      h: 1,
-      i: "R-4.C",
-      bgColor: "#a50034",
-    },
-
-    {
-      x: 24,
-      y: 1,
-      w: 4,
-      h: 2,
-      i: "R-4.B",
-      bgColor: "#a50034",
-    },
-  ];
 
   const itemModal = (i: any) => {
     console.log(i);
@@ -143,7 +48,7 @@ const NoCollisionLayout: React.FC<Props> = ({
       </div>
     ));
 
-  const onLayoutChangeHandler = (layout: RGL.Layout[]): void => {
+  const onLayoutChangeHandler = (layout: LayoutItem[]): void => {
     const newLayout = layout.map((item) => ({
       x: item.x,
       y: item.y,
