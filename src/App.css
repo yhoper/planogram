@@ -1520,8 +1520,25 @@ body {
   height: 60px;
 }
 
-.text{
-    color:#fff;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 15px !important;
+.text {
+  color: #fff;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 15px !important;
+}
+
+#centerModal {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  width: 600px;
+  height: 410px;
+  transform: translate(-50%, -50%);
+}
+
+.closeModal {
+  margin: 0 0 8px 0;
+}
+.contentCloseModal {
+  display: flex;
+  justify-content: end;
 }
