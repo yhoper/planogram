@@ -20,11 +20,12 @@ const ReactGridLayout = WidthProvider(RGL);
 
 const NoCollisionLayout: React.FC<Props> = ({
   className = "layout",
-  cols = 48,
+  cols = 84,
   rowHeight = 30,
   onLayoutChange = () => {},
   compactType = "vertical",
-  preventCollision = true,
+  preventCollision = false,
+  verticalCompact = false,
 }) => {
   const [layout, setLayout] = useState<LayoutItem[]>([]);
 
@@ -40,6 +41,7 @@ const NoCollisionLayout: React.FC<Props> = ({
   const generateDOM = () =>
     _.map(layout, (item) => (
       <div
+        
         onClick={() => itemModal(item.i)}
         key={item.i}
         style={{ backgroundColor: item.bgColor }}
@@ -126,6 +128,7 @@ const NoCollisionLayout: React.FC<Props> = ({
         rowHeight={rowHeight}
         compactType={compactType}
         preventCollision={preventCollision}
+        verticalCompact={verticalCompact}
       >
         {generateDOM()}
       </ReactGridLayout>

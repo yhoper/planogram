@@ -45,7 +45,7 @@ const ModalWithCarousel: React.FC<ModalProps> = ({
         ))}
       </Slider>
       <p>
-        Foto: {currentSlide + 1} de {images.length}
+        Foto: {currentSlide + 1} de {images.length} <span className="dateModal">25 Abril 2024</span>
       </p>
     </Modal>
   );
