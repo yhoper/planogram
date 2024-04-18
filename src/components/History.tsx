@@ -44,53 +44,10 @@ const History = () => {
             children: (
               <>
                 <p className="clickHistory" onClick={() => itemModal("")}>
-                  Visita 15 Julio 2023
+                  Reporte 15 Julio 2023
                 </p>
                 <p className="clickHistory" onClick={() => itemModal("")}>
-                  Visita 05 Junio 2023
-                </p>
-                <p className="clickHistory" onClick={() => itemModal("")}>
-                  Visita 23 Mayo 2023
-                </p>
-                <p className="clickHistory" onClick={() => itemModal("")}>
-                  Visita 11 Abril 2023
-                </p>
-                <p className="clickHistory" onClick={() => itemModal("")}>
-                  Visita 08 Marzo 2023
-                </p>
-                <p className="clickHistory" onClick={() => itemModal("")}>
-                  Visita 12 Febrero 2023
-                </p>
-                <p className="clickHistory" onClick={() => itemModal("")}>
-                  Visita 10 Enero 2023
-                </p>
-              </>
-            ),
-          },
-
-          {
-            children: (
-              <>
-                <p className="clickHistory" onClick={() => itemModal("")}>
-                  Visita 15 Julio 2022L
-                </p>
-                <p className="clickHistory" onClick={() => itemModal("")}>
-                  Visita 05 Junio 2022L
-                </p>
-                <p className="clickHistory" onClick={() => itemModal("")}>
-                  Visita 23 Mayo 2022L
-                </p>
-                <p className="clickHistory" onClick={() => itemModal("")}>
-                  Visita 11 Abril 2022L
-                </p>
-                <p className="clickHistory" onClick={() => itemModal("")}>
-                  Visita 08 Marzo 2022L
-                </p>
-                <p className="clickHistory" onClick={() => itemModal("")}>
-                  Visita 12 Febrero 2022L
-                </p>
-                <p className="clickHistory" onClick={() => itemModal("")}>
-                  Visita 10 Enero 2022L
+                  Reporte 05 Junio 2023
                 </p>
               </>
             ),

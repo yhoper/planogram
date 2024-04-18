@@ -1,12 +1,19 @@
-import Layout from "./components/Layout";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LoginComponent from "./components/LoginComponent";
+import LayoutComponent from "./components/Layout";
 import "./App.css";
 
-function App() {
+// Componente principal de la aplicación
+const App: React.FC = () => {
   return (
-    <>
-      <Layout />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LoginComponent />} />
+        <Route path="/dashboard" element={<LayoutComponent />} />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
