@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react";
-import ModalWithCarousel from "./modalWithCarousel";
+import ModalWithCarousel from "./modalWithCarousel.tsx";
 import _ from "lodash";
 import RGL, { WidthProvider } from "react-grid-layout";
-import { generateLayout } from "../utils/layoutUtils.tsx";
+import { generateLayout } from "../utils/layoutUtilsf.tsx";
 import { LayoutItem } from "../interfaces/LayoutItem.tsx";
-import { Props } from "../interfaces/Props";
+import { Props } from "../interfaces/Props.tsx";
 import "react-grid-layout/css/styles.css";
 import "react-resizable/css/styles.css";
 import img_1 from "../assets/locales/img_1.jpg";
 import img_2 from "../assets/locales/img_2.jpg";
 import img_3 from "../assets/locales/img_3.jpg";
+// import { ZoomInOutlined } from "@ant-design/icons";
 import ButtonContainer from "./ButtonContainer.tsx";
 
 const ReactGridLayout = WidthProvider(RGL);
@@ -38,11 +39,13 @@ const NoCollisionLayout: React.FC<Props> = ({
     _.map(layout, (item) => (
       <div
         
-        onClick={() => itemModal(item.i)}
         key={item.i}
         style={{ backgroundColor: item.bgColor }}
       >
         <span className="text">{item.i}</span>
+        <span className="text-view" onClick={() => itemModal(item.i)}>
+          {/* <ZoomInOutlined /> */}
+        </span>
       </div>
     ));
 
@@ -80,7 +83,6 @@ const NoCollisionLayout: React.FC<Props> = ({
         images={images}
       />
       <ButtonContainer addNewItem={addNewItem} />
-      
       <ReactGridLayout
         cols={cols}
         layout={layout}

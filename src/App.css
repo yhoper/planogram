@@ -1,13 +1,29 @@
+@font-face {
+  font-family: "LGEI";
+  src: url("./assets/Fonts/TTF/LGEIHeadlineTTF-Light.ttf");
+}
+@font-face {
+  font-family: "LGBOLD";
+  src: url("./assets/Fonts/TTF/LGEIHeadlineTTF-Regular.ttf");
+}
+
+html {
+  background-color: #f6f3eb;
+}
+
 body {
-  /* padding: 20px; */
-  /* width: 100% !important; */
   background-color: #e6e6e6;
+  margin: 0px;
+  font-family: LGEI, "LGEI", Segoe UI, "Microsoft Sans Serif", sans-serif;
+}
+div {
+  font-family: LGEI, "LGEI", Segoe UI, "Microsoft Sans Serif", sans-serif;
 }
 #content {
   width: 100%;
 }
 .react-grid-layout {
-  background: #eee;
+  background: #fff;
   margin-top: 10px;
 }
 .layoutJSON {
@@ -36,7 +52,7 @@ body {
   background: #cce;
 }
 .react-grid-item .text {
-  font-size: 24px;
+  /* font-size: 24px;
   text-align: center;
   position: absolute;
   top: 0;
@@ -44,7 +60,7 @@ body {
   left: 0;
   right: 0;
   margin: auto;
-  height: 24px;
+  height: 24px; */
 }
 .react-grid-item .minMax {
   font-size: 12px;
@@ -142,12 +158,12 @@ body {
 }
 
 #yf-bt-wrapper h1 {
-  font-family: LatoBold, sans-serif;
+  /* font-family: LatoBold, sans-serif; */
 }
 
 #yf-bt-wrapper h2,
 #yf-bt-wrapper p {
-  font-family: LatoRegular, sans-serif;
+  /* font-family: LatoRegular, sans-serif; */
 }
 
 #yf-bt-wrapper p {
@@ -1085,7 +1101,7 @@ body {
   text-align: left;
   background: #fff;
   z-index: 1;
-  font-family: Arial, sans-serif;
+  /* font-family: Arial, sans-serif; */
   border-left: 7px solid #1399fc;
 }
 
@@ -1107,7 +1123,7 @@ body {
   display: block;
   font-size: 12px;
   line-height: 16px;
-  font-family: Arial, sans-serif;
+  /* font-family: Arial, sans-serif; */
   margin: 0 auto;
   text-align: left;
   color: #000;
@@ -1142,7 +1158,7 @@ body {
   display: block;
   font-size: 12px;
   line-height: 20px;
-  font-family: Arial, sans-serif;
+  /* font-family: Arial, sans-serif; */
   margin: 10px 0;
   text-align: left;
   color: #398fe6;
@@ -1521,14 +1537,12 @@ body {
 }
 
 .text {
-  /* color: #fff;
-  font-family: "Courier New", Courier, monospace;
-  font-size: 15px !important; */
+  /* font-family: "Courier New", Courier, monospace; */
   color: #fff;
-  font-family: system-ui;
+  /* font-family: system-ui; */
   font-size: 10px !important;
-  font-weight: bold;
-  padding-top: 0.6rem;
+  /* font-weight: bold;
+  padding-top: 0.6rem; */
 }
 
 #centerModal {
@@ -1548,7 +1562,6 @@ body {
   display: flex;
   justify-content: end;
 }
-
 
 .react-grid-layout {
   position: relative;
@@ -1670,8 +1683,180 @@ body {
   transform: rotate(45deg);
 }
 
-.dateModal{
+.dateModal {
   position: absolute;
-    right: 0;
-    padding: 0 22px;
+  right: 0;
+  padding: 0 22px;
+}
+
+.text-view {
+  position: absolute;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.react-grid-item.react-draggable.cssTransforms.react-resizable {
+  background-color: #b6345d;
+  color: white;
+  padding: 0px;
+  box-shadow: 0 4px 8px rgb(90 78 78 / 46%);
+  border: 0px solid #9d0e3a;
+}
+
+.ReactModal__Overlay.ReactModal__Overlay--after-open {
+  background-color: rgb(157 157 157 / 75%) !important;
+}
+
+.clickHistory {
+  cursor: pointer;
+}
+
+header.ant-layout-header.css-dev-only-do-not-override-usln0u {
+  box-shadow: 10px 5px 5px #bebcbc;
+}
+
+aside.ant-layout-sider.ant-layout-sider-dark {
+  box-shadow: 4px 4px 4px #bebcbc;
+  background-color: #fefefe;
+}
+
+.logoMenu {
+  margin: 1vw 1vw 1vw 1vw;
+  width: 39%;
+}
+
+:where(.css-dev-only-do-not-override-usln0u).ant-layout {
+  background-color: #f6f3eb !important;
+}
+main.ant-layout-content.css-dev-only-do-not-override-usln0u {
+  border-radius: 20px !important;
+}
+
+:where(.css-dev-only-do-not-override-usln0u).ant-menu-dark
+  .ant-menu-item-selected,
+:where(.css-dev-only-do-not-override-usln0u).ant-menu-dark
+  > .ant-menu
+  .ant-menu-item-selected {
+  color: #262626;
+}
+:where(.css-dev-only-do-not-override-usln0u).ant-menu-dark,
+:where(.css-dev-only-do-not-override-usln0u).ant-menu-dark > .ant-menu,
+ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-dark.css-dev-only-do-not-override-usln0u {
+  background-color: #f0ece4 !important;
+}
+li.ant-menu-item.ant-menu-item-selected {
+  background-color: #fff;
+  border-radius: 20px;
+}
+
+:where(.css-dev-only-do-not-override-usln0u).ant-tabs
+  .ant-tabs-tab.ant-tabs-tab-active
+  .ant-tabs-tab-btn {
+  color: #262626;
+  text-shadow: 0 0 0.25px currentcolor;
+  font-family: "LGBOLD", LGBOLD;
+}
+
+.react-grid-item.react-draggable.cssTransforms.react-resizable {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+button#lg,
+button#samsung,
+button#sony,
+button#bose,
+button#marley {
+  border-radius: 20px;
+}
+
+.brand-contents .visual-innner {
+  height: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 3;
+}
+
+.brand-contents .download_assets {
+  position: absolute;
+  bottom: 50px;
+  left: 40px;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  padding: 9px 45px 9px 9px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+}
+img.download_assets__thumb {
+  width: 100%;
+}
+
+.landing-visual__scrolldown {
+  /* position: absolute;
+  bottom: 64px;
+  left: 0px;
+  width: 100%;
+  z-index: 2;
+  text-align: center; */
+}
+
+.landing-visual__scrolldown__btn {
+  width: 68px;
+  height: 96px;
+  text-indent: -9999px;
+  overflow: hidden;
+  border-width: 0px;
+  cursor: pointer;
+  background: url(https://www.lg.com/content/dam/lge/global/our-brand/src/mocks/layout/main_visual_scroll_down.svg)
+    no-repeat center center;
+  background-size: cover;
+  transform: translateY(0);
+  animation: sd-dounce 2s infinite alternate;
+}
+
+@keyframes sd-dounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.ant-collapse.ant-collapse-icon-position-start.css-dev-only-do-not-override-usln0u {
+  background-color: #f0ece480;
+}
+
+.ant-collapse-item.ant-collapse-item-active {
+  background-color: #f0ece4;
+}
+
+div#visual-logo {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  width: 100%;
+}
+img.download_assets__thumb {
+  border-radius: 8px;
+}
+
+.landing-visual__scrolldown {
+  /* position: absolute;
+  bottom: 64px;
+  left: 0px;
+  width: 100%;
+  z-index: 2;
+  text-align: center; */
+  position: absolute;
+  bottom: 0px;
 }

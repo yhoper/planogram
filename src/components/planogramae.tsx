@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ModalWithCarousel from "./modalWithCarousel";
 import _ from "lodash";
 import RGL, { WidthProvider } from "react-grid-layout";
-import { generateLayout } from "../utils/layoutUtils.tsx";
+import { generateLayout } from "../utils/layoutUtilse.tsx";
 import { LayoutItem } from "../interfaces/LayoutItem.tsx";
 import { Props } from "../interfaces/Props";
 import "react-grid-layout/css/styles.css";
@@ -11,6 +11,7 @@ import img_1 from "../assets/locales/img_1.jpg";
 import img_2 from "../assets/locales/img_2.jpg";
 import img_3 from "../assets/locales/img_3.jpg";
 import ButtonContainer from "./ButtonContainer.tsx";
+
 
 const ReactGridLayout = WidthProvider(RGL);
 
@@ -31,13 +32,11 @@ const NoCollisionLayout: React.FC<Props> = ({
 
   const itemModal = (i: any) => {
     console.log(i);
-    setIsOpen(true);
   };
 
   const generateDOM = () =>
     _.map(layout, (item) => (
       <div
-        
         onClick={() => itemModal(item.i)}
         key={item.i}
         style={{ backgroundColor: item.bgColor }}
@@ -80,7 +79,6 @@ const NoCollisionLayout: React.FC<Props> = ({
         images={images}
       />
       <ButtonContainer addNewItem={addNewItem} />
-      
       <ReactGridLayout
         cols={cols}
         layout={layout}

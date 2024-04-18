@@ -1,9 +1,10 @@
-import Planogramad from './components/planogramad';
-import './App.css'
+import Layout from "./components/Layout";
+import "./App.css";
+
 function App() {
   return (
     <>
-      <Planogramad /> 
+      <Layout />
     </>
   );
 }

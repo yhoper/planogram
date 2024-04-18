@@ -124,7 +124,7 @@ class NoCollisionLayout extends PureComponent<Props, State> {
           <button
             className="btnglobal color-w"
             id="samsung"
-            onClick={() => this.addNewItem("#14299f")}
+            onClick={() => this.addNewItem("#142a9fde")}
           >
             <img src={samsung} alt="" />
           </button>
