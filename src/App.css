@@ -1861,8 +1861,95 @@ img.download_assets__thumb {
   bottom: 0px;
 }
 
-
-
-.layoutSelect{
+.layoutSelect {
   padding-bottom: 3rem;
+}
+
+/*MEASURE X */
+
+.containterMeasureX {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.measureXLineL,
+.measureXLineR {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #f0ece4;
+  position: absolute;
+  top: 6px;
+  width: 48%;
+}
+
+.measureXLineL {
+  left: 0;
+}
+
+.measureXLineR {
+  right: 0;
+}
+
+.measureXTxt {
+  font-size: 9px;
+  color: #333;
+  margin: 0 3px;
+  
+  background-color: #d9d9d9;
+  position: relative;
+  z-index: 1;
+  border-radius: 3px;
+  padding: 3px;
+}
+
+/*MEASURE Y */
+
+.containterMeasureY {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(0deg); /* Rotar el contenedor en sentido antihorario */
+  transform-origin: center center; /* Establecer el punto de origen de la rotación */
+}
+.measureYLineL {
+  width: 1px;
+  height: 20%;
+  bottom: 2px;
+}
+.measureYLineR {
+  right: 18px;
+  top: 1px;
+  height: 20%;
+}
+
+.measureYLineL,
+.measureYLineR {
+  width: 1px; /* Cambiar el ancho a 1px para que se muestre como una línea vertical */
+  background-color: #f0ece4;
+  position: absolute;
+}
+
+.measureYLineR {
+  right: 18px;
+  top: 3px;
+  height: 30px;
+}
+
+.measureYTxt {
+  font-size: 9px;
+  color: #333;
+  margin: 0 3px;
+  writing-mode: vertical-rl;
+  background-color: #d9d9d9;
+  position: relative;
+  z-index: 1;
+  border-radius: 3px;
+  padding: 3px;
 }

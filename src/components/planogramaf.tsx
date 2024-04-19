@@ -12,6 +12,7 @@ import img_2 from "../assets/locales/img_2.jpg";
 import img_3 from "../assets/locales/img_3.jpg";
 // import { ZoomInOutlined } from "@ant-design/icons";
 import ButtonContainer from "./ButtonContainer.tsx";
+import { Switch } from "antd";
 
 const ReactGridLayout = WidthProvider(RGL);
 
@@ -24,6 +25,9 @@ const NoCollisionLayout: React.FC<Props> = ({
   preventCollision = false,
   verticalCompact = false,
 }) => {
+  const [verMedidas, setVerMedidas] = useState(false);
+  const [verDescripcion, setVerDescripcion] = useState(true);
+
   const [layout, setLayout] = useState<LayoutItem[]>([]);
 
   useEffect(() => {
@@ -34,15 +38,27 @@ const NoCollisionLayout: React.FC<Props> = ({
     console.log(i);
     setIsOpen(true);
   };
+  const onChange = (checked: boolean) => {
+    console.log(`switch to ${checked}`);
+  };
 
   const generateDOM = () =>
     _.map(layout, (item) => (
-      <div
-        
-        key={item.i}
-        style={{ backgroundColor: item.bgColor }}
-      >
-        <span className="text">{item.i}</span>
+      <div key={item.i} style={{ backgroundColor: item.bgColor }}>
+        {verDescripcion && <span className="text">{item.i}</span>}
+        {verMedidas && (
+          <>
+            <div className="containterMeasureX">
+              <div className="measureXLineL"></div>
+              <div className="measureXTxt">200cm</div>
+              <div className="measureXLineR"></div>
+            </div>
+
+            <div className="containterMeasureY">
+              <div className="measureYTxt">200cm</div>
+            </div>
+          </>
+        )}
         <span className="text-view" onClick={() => itemModal(item.i)}>
           {/* <ZoomInOutlined /> */}
         </span>
@@ -75,14 +91,37 @@ const NoCollisionLayout: React.FC<Props> = ({
   const [isOpen, setIsOpen] = useState(false);
   const images = [img_1, img_2, img_3];
 
+  const handleMedidasChange = (checked: any) => {
+    setVerMedidas(checked);
+  };
+
+  const handleDescripcionChange = (checked: any) => {
+    setVerDescripcion(checked);
+  };
+
   return (
     <>
+      <div>
+        <Switch
+          defaultChecked={verMedidas}
+          onChange={handleMedidasChange}
+          size="small"
+        />
+        Ver medidas
+        <Switch
+          defaultChecked={verDescripcion}
+          onChange={handleDescripcionChange}
+          size="small"
+        />
+        Ver Descripcion
+      </div>
+
       <ModalWithCarousel
         isOpen={isOpen}
         onRequestClose={() => setIsOpen(false)}
         images={images}
       />
-      <ButtonContainer addNewItem={addNewItem} />
+      {/* <ButtonContainer addNewItem={addNewItem} /> */}
       <ReactGridLayout
         cols={cols}
         layout={layout}
