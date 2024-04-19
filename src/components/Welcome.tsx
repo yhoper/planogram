@@ -1,7 +1,4 @@
-import { redirect } from "react-router-dom";
-
 const Welcome = () => {
-  const useNavigate = redirect("/dashboard");
   return (
     <div>
       <div id="visual-logo" className="visual__top">
