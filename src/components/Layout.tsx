@@ -7,7 +7,7 @@ import {
 } from "@ant-design/icons";
 import CollapseComponent from "./CollapseComponent";
 import { Select } from "antd";
-import { Store, Location } from "../interfaces/types";
+import {  Location } from "../interfaces/types";
 import { Alert } from "antd";
 import ChartjsComponent from "./ChartjsComponent";
 // Define tu propio tipo para el tema
@@ -34,10 +34,6 @@ const LayoutComponent: React.FC = () => {
     // Otros valores del tema
   };
 
-  const filterOption = (
-    input: string,
-    option?: { label: string; value: string }
-  ) => (option?.label ?? "").toLowerCase().includes(input.toLowerCase());
 
   const handleStoreChange = (value: string) => {
     setStore(value);

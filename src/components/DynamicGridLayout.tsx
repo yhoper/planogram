@@ -1,29 +1,39 @@
-import React, { PureComponent } from "react";
+import { PureComponent, ReactNode } from "react";
 import _ from "lodash";
-import RGL, { WidthProvider } from "react-grid-layout";
+import RGL, { WidthProvider, Layout } from "react-grid-layout";
+
+interface Props {
+  className?: string;
+  items?: number;
+  cols?: number;
+  rowHeight?: number;
+  onLayoutChange?: (layout: Layout[]) => void;
+  verticalCompact?: boolean;
+  y?: number;
+}
 
 const ReactGridLayout = WidthProvider(RGL);
 
-export default class NoCompactingLayout extends PureComponent {
-  static defaultProps = {
+export default class NoCompactingLayout extends PureComponent<Props, { layout: Layout[] }> {
+  static defaultProps: Partial<Props> = {
     className: "layout",
     items: 120,
     cols: 84,
     rowHeight: 20,
-    onLayoutChange: function () {},
+    onLayoutChange: () => {},
     // This turns off compaction so you can place items wherever.
     verticalCompact: false,
   };
 
-  constructor(props) {
+  constructor(props: Props) {
     super(props);
 
     const layout = this.generateLayout();
     this.state = { layout };
   }
 
-  generateDOM() {
-    return _.map(_.range(this.props.items), function (i) {
+  generateDOM(): ReactNode[] {
+    return _.map(_.range(this.props.items!), (i) => {
       return (
         <div key={i}>
           <span className="text">{i}</span>
@@ -32,9 +42,9 @@ export default class NoCompactingLayout extends PureComponent {
     });
   }
 
-  generateLayout() {
+  generateLayout(): Layout[] {
     const p = this.props;
-    return _.map(new Array(p.items), function (item, i) {
+    return _.map(new Array(p.items), (_, i) => {
       const y = _.result(p, "y") || Math.ceil(Math.random() * 4) + 1;
       return {
         x: (i * 2) % 84,
@@ -46,8 +56,8 @@ export default class NoCompactingLayout extends PureComponent {
     });
   }
 
-  onLayoutChange = (layout) => {
-    this.props.onLayoutChange(layout);
+  onLayoutChange = (layout: Layout[]) => {
+    this.props.onLayoutChange!(layout);
   };
 
   exportToJson = () => {

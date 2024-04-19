@@ -1,3 +1,4 @@
+// planogramaD.tsx
 import React, { useState, useEffect } from "react";
 import ModalWithCarousel from "./modalWithCarousel";
 import _ from "lodash";
@@ -14,7 +15,7 @@ import ButtonContainer from "./ButtonContainer.tsx";
 
 const ReactGridLayout = WidthProvider(RGL);
 
-const NoCollisionLayout: React.FC<Props> = ({
+const planogramaD: React.FC<Props> = ({
   className = "layout",
   cols = 84,
   rowHeight = 30,
@@ -37,7 +38,6 @@ const NoCollisionLayout: React.FC<Props> = ({
   const generateDOM = () =>
     _.map(layout, (item) => (
       <div
-        
         onClick={() => itemModal(item.i)}
         key={item.i}
         style={{ backgroundColor: item.bgColor }}
@@ -53,7 +53,7 @@ const NoCollisionLayout: React.FC<Props> = ({
       w: item.w,
       h: item.h,
       i: item.i,
-      bgColor: "",
+      bgColor: item.bgColor || "",
     }));
     onLayoutChange(newLayout);
   };
@@ -80,11 +80,11 @@ const NoCollisionLayout: React.FC<Props> = ({
         images={images}
       />
       <ButtonContainer addNewItem={addNewItem} />
-      
+
       <ReactGridLayout
         cols={cols}
         layout={layout}
-        onLayoutChange={(layout) => onLayoutChangeHandler(layout)}
+        onLayoutChange={onLayoutChangeHandler}
         className={className}
         rowHeight={rowHeight}
         compactType={compactType}
@@ -97,4 +97,4 @@ const NoCollisionLayout: React.FC<Props> = ({
   );
 };
 
-export default NoCollisionLayout;
+export default planogramaD;

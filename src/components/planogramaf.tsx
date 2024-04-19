@@ -11,12 +11,12 @@ import img_1 from "../assets/locales/img_1.jpg";
 import img_2 from "../assets/locales/img_2.jpg";
 import img_3 from "../assets/locales/img_3.jpg";
 // import { ZoomInOutlined } from "@ant-design/icons";
-import ButtonContainer from "./ButtonContainer.tsx";
+
 import { Switch } from "antd";
 
 const ReactGridLayout = WidthProvider(RGL);
 
-const NoCollisionLayout: React.FC<Props> = ({
+const planogramaF: React.FC<Props> = ({
   className = "layout",
   cols = 84,
   rowHeight = 30,
@@ -38,9 +38,7 @@ const NoCollisionLayout: React.FC<Props> = ({
     console.log(i);
     setIsOpen(true);
   };
-  const onChange = (checked: boolean) => {
-    console.log(`switch to ${checked}`);
-  };
+  
 
   const generateDOM = () =>
     _.map(layout, (item) => (
@@ -76,18 +74,7 @@ const NoCollisionLayout: React.FC<Props> = ({
     }));
     onLayoutChange(newLayout);
   };
-
-  const addNewItem = (color: string): void => {
-    const newItem: LayoutItem = {
-      x: 0,
-      y: 0,
-      w: 2,
-      h: Math.ceil(Math.random() * 4) + 1,
-      i: `item-${layout.length}`,
-      bgColor: color,
-    };
-    setLayout([...layout, newItem]);
-  };
+ 
   const [isOpen, setIsOpen] = useState(false);
   const images = [img_1, img_2, img_3];
 
@@ -125,7 +112,7 @@ const NoCollisionLayout: React.FC<Props> = ({
       <ReactGridLayout
         cols={cols}
         layout={layout}
-        onLayoutChange={(layout) => onLayoutChangeHandler(layout)}
+        onLayoutChange={onLayoutChangeHandler}
         className={className}
         rowHeight={rowHeight}
         compactType={compactType}
@@ -138,4 +125,4 @@ const NoCollisionLayout: React.FC<Props> = ({
   );
 };
 
-export default NoCollisionLayout;
+export default planogramaF;

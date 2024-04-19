@@ -82,7 +82,7 @@ const NoCollisionLayout: React.FC<Props> = ({
       <ReactGridLayout
         cols={cols}
         layout={layout}
-        onLayoutChange={(layout) => onLayoutChangeHandler(layout)}
+        onLayoutChange={onLayoutChangeHandler}
         className={className}
         rowHeight={rowHeight}
         compactType={compactType}
