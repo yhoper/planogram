@@ -1,17 +1,22 @@
-import React from "react";
+import { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import LoginComponent from "./components/LoginComponent";
-import LayoutComponent from "./components/Layout";
 import "./App.css";
 
-const App: React.FC = () => {
+const Home = lazy(() => import("./components/LoginComponent"));
+const Layout = lazy(() => import("./components/Layout"));
+
+const App = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<LoginComponent />} />
-        <Route path="/dashboard" element={<LayoutComponent />} />
-      </Routes>
-    </Router>
+    <>
+      <Suspense fallback={<div>Cargando...</div>}>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/dashboard" element={<Layout />} />
+          </Routes>
+        </Router>
+      </Suspense>
+    </>
   );
 };
 
