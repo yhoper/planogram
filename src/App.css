@@ -1975,3 +1975,8 @@ img.download_assets__thumb {
 .colorLG {
   color: #b6345d !important;
 }
+
+.ant-statistic-content {
+  padding-top: 23px;
+  margin-right: 18vh;
+}
