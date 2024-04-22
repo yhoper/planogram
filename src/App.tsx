@@ -1,17 +1,17 @@
-import { lazy, Suspense } from "react";
+import React, { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 
-const Home = lazy(() => import("./components/LoginComponent"));
+const Login = lazy(() => import("./components/LoginComponent"));
 const Layout = lazy(() => import("./components/Layout"));
 
-const App = () => {
+const App: React.FC = () => {
   return (
     <>
       <Suspense fallback={<div>Cargando...</div>}>
         <Router>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Login />} />
             <Route path="/dashboard" element={<Layout />} />
           </Routes>
         </Router>
