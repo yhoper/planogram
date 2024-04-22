@@ -6,7 +6,7 @@ const Welcome = () => {
     <div>
       <div id="visual-logo" className="visual__top">
         <div className="landing-visual__scrolldown">
-          <a href="/dashboard">
+          <a href="/lg/dashboard">
             <button type="button" className="landing-visual__scrolldown__btn">
               Scroll Down
             </button>
