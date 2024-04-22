@@ -1,7 +1,6 @@
 import { Tabs } from "antd";
 import type { TabsProps } from "antd";
 import Planogramad from "./planogramad";
-import Planogramae from "./planogramae";
 import Planogramaf from "./planogramaf";
 import History from "./History";
 

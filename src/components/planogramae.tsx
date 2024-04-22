@@ -73,7 +73,7 @@ const NoCollisionLayout: React.FC<Props> = ({
 
   return (
     <>
-    EEEE
+    
       <ModalWithCarousel
         isOpen={isOpen}
         onRequestClose={() => setIsOpen(false)}
