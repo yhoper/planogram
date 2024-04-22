@@ -1,4 +1,7 @@
+
+
 const Welcome = () => {
+  
   return (
     <div>
       <div id="visual-logo" className="visual__top">

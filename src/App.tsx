@@ -4,7 +4,6 @@ import LoginComponent from "./components/LoginComponent";
 import LayoutComponent from "./components/Layout";
 import "./App.css";
 
-// Componente principal de la aplicación
 const App: React.FC = () => {
   return (
     <Router>

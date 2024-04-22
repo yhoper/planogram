@@ -1743,13 +1743,14 @@ main.ant-layout-content.css-dev-only-do-not-override-usln0u {
 :where(.css-dev-only-do-not-override-usln0u).ant-menu-dark > .ant-menu,
 ul.ant-menu.ant-menu-root.ant-menu-inline.ant-menu-dark.css-dev-only-do-not-override-usln0u,
 .ant-menu {
-  background-color: #f0ece4 !important;
+  /* background-color: #f0ece4 !important; */
+  background-color: #fff;
 }
 li.ant-menu-item.ant-menu-item-selected {
-  background-color: #fff;
+  background-color: #f0ece4;
   border-radius: 20px;
 }
-.ant-layout{
+.ant-layout {
   background-color: #f6f3eb;
 }
 span.anticon.anticon-user.ant-menu-item-icon {
@@ -1961,4 +1962,16 @@ img.download_assets__thumb {
   z-index: 1;
   border-radius: 3px;
   padding: 3px;
+}
+
+.ant-statistic-title {
+  color: #000 !important;
+}
+
+.ant-card-body {
+  display: flex;
+}
+
+.colorLG {
+  color: #b6345d !important;
 }
