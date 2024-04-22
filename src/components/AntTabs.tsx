@@ -23,11 +23,6 @@ const AntTabs = () => {
     },
     {
       key: "3",
-      label: "Medidas",
-      children: <Planogramae />,
-    },
-    {
-      key: "4",
       label: "Historial",
       children: <History/>
     }

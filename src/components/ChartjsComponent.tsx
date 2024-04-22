@@ -16,18 +16,20 @@ const ChartjsComponent: React.FC = () => {
           <CardComponent />
         </Col> */}
 
-        <Divider orientation="right" className="colorLG">Cumplimiento por tienda</Divider>
+        <Divider orientation="right" className="colorLG">
+          Cumplimiento por tienda
+        </Divider>
         <Col span={6}>
           <Card bordered={false}>
             <Statistic
               title="FALABELLA"
-              value={11.28}
+              value={97.28}
               precision={2}
               valueStyle={{ color: "#3f8600" }}
               prefix={<ArrowUpOutlined />}
               suffix="%"
             />
-            <div style={{height:"140px"}}>
+            <div style={{ height: "140px" }}>
               <ChartDoughnut />
             </div>
           </Card>
@@ -37,13 +39,13 @@ const ChartjsComponent: React.FC = () => {
           <Card bordered={false}>
             <Statistic
               title="PARIS"
-              value={9.3}
+              value={95.3}
               precision={2}
-              valueStyle={{ color: "#cf1322" }}
-              prefix={<ArrowDownOutlined />}
+              valueStyle={{ color: "#3f8600" }}
+              prefix={<ArrowUpOutlined />}
               suffix="%"
             />
-            <div style={{height:"140px"}}>
+            <div style={{ height: "140px" }}>
               <ChartDoughnut />
             </div>
           </Card>
@@ -53,13 +55,13 @@ const ChartjsComponent: React.FC = () => {
           <Card bordered={false}>
             <Statistic
               title="RIPLEY"
-              value={11.28}
+              value={91.28}
               precision={2}
               valueStyle={{ color: "#3f8600" }}
               prefix={<ArrowUpOutlined />}
               suffix="%"
             />
-            <div style={{height:"140px"}}>
+            <div style={{ height: "140px" }}>
               <ChartDoughnut />
             </div>
           </Card>
@@ -69,19 +71,21 @@ const ChartjsComponent: React.FC = () => {
           <Card bordered={false}>
             <Statistic
               title="WALMART"
-              value={9.3}
+              value={82.3}
               precision={2}
               valueStyle={{ color: "#cf1322" }}
               prefix={<ArrowDownOutlined />}
               suffix="%"
             />
-            <div style={{height:"140px"}}>
+            <div style={{ height: "140px" }}>
               <ChartDoughnut />
             </div>
           </Card>
         </Col>
 
-        <Divider orientation="right" className="colorLG">Gráficos</Divider>
+        <Divider orientation="right" className="colorLG">
+          Gráficos
+        </Divider>
 
         <Col span={6}>
           <Card bordered={false}>

@@ -6,11 +6,17 @@ import {
   UserOutlined,
   BarChartOutlined,
   SettingOutlined,
+  ProductOutlined,
 } from "@ant-design/icons";
 
 import CollapseComponent from "./CollapseComponent";
 import { Location } from "../interfaces/types";
 import ChartjsComponent from "./ChartjsComponent";
+
+import { Card, Col, Row, Statistic, Divider } from "antd";
+import { ArrowDownOutlined, ArrowUpOutlined } from "@ant-design/icons";
+import ChartDoughnut from "./ChartCard/ChartDoughnut";
+
 interface CustomTheme {
   colorBgContainer: string;
   borderRadiusLG: string;
@@ -75,7 +81,7 @@ const LayoutComponent: React.FC = () => {
       case "lg":
         return (
           <>
-            <div className="layoutSelect">
+            <div className="layoutSelect twocol">
               <Select
                 showSearch
                 placeholder="Selecciona una tienda"
@@ -85,9 +91,8 @@ const LayoutComponent: React.FC = () => {
               >
                 <Option value="falabella">Falabella</Option>
                 <Option value="paris">Paris</Option>
-                {/* <Option value="ripley">Ripley</Option>
-              <Option value="walmart">Walmart</Option> */}
               </Select>
+
               <Select
                 showSearch
                 placeholder="Seleccione ubicación"
@@ -96,6 +101,45 @@ const LayoutComponent: React.FC = () => {
                 options={locations}
                 onChange={handleLocationChange}
               />
+
+              {store === "paris" && location === "parqueArauco" && (
+                <>
+                  <Col span={6}>
+                    <Card bordered={false}>
+                      <Statistic
+                        title="PARIS"
+                        value={95.30}
+                        precision={2}
+                        valueStyle={{ color: "#3f8600" }}
+                        prefix={<ArrowUpOutlined />}
+                        suffix="%"
+                      />
+                      <div style={{ height: "140px" }}>
+                        <ChartDoughnut />
+                      </div>
+                    </Card>
+                  </Col>
+                </>
+              )}
+              {store && !location && store !== "paris" && (
+                <>
+                  <Col span={6}>
+                    <Card bordered={false}>
+                      <Statistic
+                        title="FALABELLA"
+                        value={90.28}
+                        precision={2}
+                        valueStyle={{ color: "#3f8600" }}
+                        prefix={<ArrowUpOutlined />}
+                        suffix="%"
+                      />
+                      <div style={{ height: "140px" }}>
+                        <ChartDoughnut />
+                      </div>
+                    </Card>
+                  </Col>
+                </>
+              )}
             </div>
             {store === "paris" && location === "parqueArauco" && (
               <>
@@ -126,6 +170,8 @@ const LayoutComponent: React.FC = () => {
             )}
           </>
         );
+      case "model":
+        return <div>Aquí van los modelos</div>;
       case "settings":
         return <div>Aquí va la configuración</div>;
       default:
@@ -156,6 +202,11 @@ const LayoutComponent: React.FC = () => {
               key: "lg",
               icon: <UserOutlined style={{ color: "#000" }} />,
               label: "LG",
+            },
+            {
+              key: "model",
+              icon: <ProductOutlined style={{ color: "#000" }} />,
+              label: "Modelos",
             },
             {
               key: "settings",

@@ -1980,3 +1980,25 @@ img.download_assets__thumb {
   padding-top: 23px;
   margin-right: 9vh;
 }
+
+.react-grid-item.cssTransforms.react-resizable-hide.react-resizable {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.switchDescription,
+.switchMeasure {
+  padding: 14px;
+}
+
+
+.layoutSelect.twocol {
+  display: flex;
+}
+
+.contentSwitch {
+  display: flex;
+}
