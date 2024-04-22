@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 
 const Login = lazy(() => import("./components/LoginComponent"));
-const Layout = lazy(() => import("./components/Layout"));
+const LayoutComponent = lazy(() => import("./components/LayoutComponent"));
 
 interface RouteOptions {
   exact: boolean;
@@ -19,8 +19,12 @@ const App: React.FC = () => {
       <Suspense fallback={<div>Cargando...</div>}>
         <Router>
           <Routes>
-            <Route path="/lg/" element={<Login />} {...options} />
-            <Route path="/lg/dashboard" element={<Layout />} />
+            <Route {...options} path="/lg/" element={<Login />} />
+            <Route
+              {...options}
+              path="/lg/dashboard"
+              element={<LayoutComponent />}
+            />
           </Routes>
         </Router>
       </Suspense>
