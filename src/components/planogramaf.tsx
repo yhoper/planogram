@@ -28,7 +28,7 @@ const planogramaF: React.FC<Props> = ({
   rowHeight = 30,
   isDraggable = false,
   isResizable = false,
-  onLayoutChange = () => {},
+  onLayoutChange = () => { },
   compactType = "vertical",
   preventCollision = false,
   verticalCompact = false,
@@ -144,13 +144,14 @@ const planogramaF: React.FC<Props> = ({
         onLayoutChange={onLayoutChangeHandler}
         className={className}
         rowHeight={rowHeight}
-        
+        isDraggable={isDraggable}
+        isResizable={isResizable}
         compactType={compactType}
         preventCollision={preventCollision}
         verticalCompact={verticalCompact}
       >
         {generateDOM()}
-      </ReactGridLayout>
+      </ReactGridLayout >
     </>
   );
 };

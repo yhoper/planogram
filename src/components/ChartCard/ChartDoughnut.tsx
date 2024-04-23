@@ -20,7 +20,7 @@ interface ChartOptions {
 
 // Interfaz para los datos del gráfico
 interface ChartData {
-  labels: string[];
+  
   borderWidth: number;
   datasets: {
     fill: boolean;
@@ -48,7 +48,7 @@ const options: ChartOptions = {
 // Datos del gráfico
 
 const data: ChartData = {
-  labels: ["Si", "No"],
+  
   datasets: [
     {
       fill: true,

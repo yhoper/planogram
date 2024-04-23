@@ -3,6 +3,7 @@ import type { TabsProps } from "antd";
 import Planogramad from "./planogramad";
 import Planogramaf from "./planogramaf";
 import History from "./History";
+import DemoComponent from "./DemoComponent";
 
 const AntTabs = () => {
   const onChange = (key: string) => {
@@ -24,6 +25,11 @@ const AntTabs = () => {
       key: "3",
       label: "Historial",
       children: <History/>
+    },
+    {
+      key: "4",
+      label: "Example",
+      children: <DemoComponent/>
     }
     
   ];
