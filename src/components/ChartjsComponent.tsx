@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Col, Row, Statistic, Divider } from "antd";
+import { Card, Col, Row, Statistic, Divider, Button } from "antd";
 import { ArrowDownOutlined, ArrowUpOutlined } from "@ant-design/icons";
 import ChartLine from "./ChartCard/ChartLine";
 import ChartPolarArea from "./ChartCard/ChartPolarArea";
@@ -7,14 +7,11 @@ import ChartArea from "./ChartCard/ChartArea";
 import ChartVerticalBar from "./ChartCard/ChartVerticalBar";
 import ChartDoughnut from "./ChartCard/ChartDoughnut";
 
-const ChartjsComponent: React.FC = () => {
+
+const ChartjsComponent: React.FC<{ onGoToModels: () => void }> = ({ onGoToModels }) => {
   return (
     <>
-      {/* <Divider orientation="left">Horizontal</Divider> */}
       <Row gutter={12}>
-        {/* <Col className="gutter-row" span={12}>
-          <CardComponent />
-        </Col> */}
 
         <Divider orientation="right" className="colorLG">
           Cumplimiento por tienda
@@ -36,8 +33,9 @@ const ChartjsComponent: React.FC = () => {
         </Col>
 
         <Col span={6}>
-          <Card bordered={false}>
+          <Card bordered={false} onClick={onGoToModels}>
             <Statistic
+
               title="PARIS"
               value={95.3}
               precision={2}

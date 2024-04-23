@@ -16,6 +16,7 @@ import ChartjsComponent from "./ChartjsComponent";
 import { Card, Col, Row, Statistic, Divider } from "antd";
 import { ArrowDownOutlined, ArrowUpOutlined } from "@ant-design/icons";
 import ChartDoughnut from "./ChartCard/ChartDoughnut";
+import ModelComponet from "./ModelComponet";
 
 interface CustomTheme {
   colorBgContainer: string;
@@ -31,12 +32,14 @@ const LayoutComponent: React.FC = () => {
     borderRadiusLG: "5px",
   };
 
+
   const [collapsed, setCollapsed] = useState(false);
   const [selectedStore, setSelectedStore] = useState<string | null>(null);
   const [locations, setLocations] = useState<Location[]>([]);
   const [store, setStore] = useState<string | undefined>();
   const [location, setLocation] = useState<string | undefined>();
   const [currentMenuItem, setCurrentMenuItem] = useState<string>("dashboard");
+
 
   const handleStoreChange = (value: string) => {
     setStore(value);
@@ -74,10 +77,15 @@ const LayoutComponent: React.FC = () => {
     setCurrentMenuItem(key);
   };
 
+  const handleGoToModels = () => {
+    setCurrentMenuItem("lg");
+  };
+
+
   const getContent = () => {
     switch (currentMenuItem) {
       case "dashboard":
-        return <ChartjsComponent />;
+        return <ChartjsComponent onGoToModels={handleGoToModels} />;
       case "lg":
         return (
           <>
@@ -156,7 +164,7 @@ const LayoutComponent: React.FC = () => {
             {store && !location && store !== "paris" && (
               <div>
                 {/* <Alert message="Seleccione una ubicación" type="warning" /> */}
-                <ChartjsComponent />
+                <ChartjsComponent onGoToModels={handleGoToModels} />;
               </div>
             )}
 
@@ -171,7 +179,9 @@ const LayoutComponent: React.FC = () => {
           </>
         );
       case "model":
-        return <div>Aquí van los modelos</div>;
+        return (<ModelComponet onGoToModels={function (): void {
+          throw new Error("Function not implemented.");
+        }} />);
       case "settings":
         return <div>Aquí va la configuración</div>;
       default:
