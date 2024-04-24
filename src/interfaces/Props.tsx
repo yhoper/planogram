@@ -11,5 +11,5 @@ export interface Props {
   compactType?: "horizontal" | "vertical" | null;
   preventCollision?: boolean;
   verticalCompact?: boolean;
-  allowOverlap: boolean;
+  allowOverlapOption: boolean;
 }

@@ -29,7 +29,7 @@ const PlanogramaLGComponent: React.FC<Props> = ({
   compactType = "vertical",
   preventCollision = false,
   verticalCompact = false,
-  allowOverlap = true,
+  allowOverlapOption = false,
 }) => {
   const [verMedidas, setVerMedidas] = useState(false);
   const [verDescripcion, setVerDescripcion] = useState(true);
@@ -146,7 +146,7 @@ const PlanogramaLGComponent: React.FC<Props> = ({
         compactType={compactType}
         preventCollision={preventCollision}
         verticalCompact={verticalCompact}
-        allowOverlap={allowOverlap}
+        allowOverlap={allowOverlapOption}
       >
         {generateDOM()}
       </ReactGridLayout>

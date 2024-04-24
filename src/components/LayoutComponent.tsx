@@ -52,10 +52,7 @@ const LayoutComponent: React.FC = () => {
       case "paris":
         return [{ value: "parqueArauco", label: "Parque Arauco" }];
       case "ripley":
-        return [
-          { value: "parqueArauco", label: "Parque Arauco" },
-          { value: "costaneraCenter", label: "Costanera Center" },
-        ];
+        return [{ value: "parqueArauco", label: "Parque Arauco" }];
       case "walmart":
         return [
           { value: "costaneraCenter", label: "Costanera Center" },

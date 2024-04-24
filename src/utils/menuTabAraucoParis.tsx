@@ -7,17 +7,12 @@ export const menuTabAraucoParis = (): MenuTabs[] => [
   {
     key: 1,
     label: "LG Main",
-    children: <PlanogramaLG allowOverlap={false} />,
-  },
-  {
-    key: 2,
-    label: "LG Store ",
-    children: <PlanogramaLG allowOverlap={false} />,
+    children: <PlanogramaLG allowOverlapOption={false}/>,
   },
   {
     key: 3,
     label: "General",
-    children: <PlanogramaGeneral allowOverlap={false} />,
+    children: <PlanogramaGeneral allowOverlapOption={false}/>,
   },
   {
     key: 4,
