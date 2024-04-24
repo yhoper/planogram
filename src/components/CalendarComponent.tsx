@@ -10,14 +10,6 @@ const CalendarComponent: React.FC = () => {
     const [endDate, setEndDate] = useState<Dayjs | null>(null);
     const [showCalendar, setShowCalendar] = useState(false);
 
-    const handleStartDateChange = (value: Dayjs | null) => {
-        setStartDate(value);
-    };
-
-    const handleEndDateChange = (value: Dayjs | null) => {
-        setEndDate(value);
-    };
-
     const handleInputChange = () => {
         setShowCalendar(!showCalendar);
     };
@@ -40,13 +32,6 @@ const CalendarComponent: React.FC = () => {
         border: `1px solid ${token.colorBorderSecondary}`,
         borderRadius: token.borderRadiusLG,
         position: 'relative',
-    };
-
-    const inputStyle: React.CSSProperties = {
-        width: '100%',
-        padding: '8px',
-        boxSizing: 'border-box',
-        cursor: 'pointer',
     };
 
 

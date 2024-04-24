@@ -1,16 +1,15 @@
-
+import { Link } from "react-router-dom";
 
 const Welcome = () => {
-  
   return (
     <div>
       <div id="visual-logo" className="visual__top">
         <div className="landing-visual__scrolldown">
-          <a href="/lg/dashboard">
+          <Link to="/lg/dashboard">
             <button type="button" className="landing-visual__scrolldown__btn">
               Scroll Down
             </button>
-          </a>
+          </Link>
         </div>
         <div className="visual-innner">
           <div className="download_assets">

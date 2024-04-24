@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Layout, Menu, Button, Select, Alert } from "antd";
+import { Layout, Menu, Button, Select } from "antd";
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
@@ -12,16 +12,11 @@ import {
 import CollapseComponent from "./CollapseComponent";
 import { Location } from "../interfaces/types";
 import ChartjsComponent from "./ChartjsComponent";
-
-import { Card, Col, Row, Statistic, Divider } from "antd";
-import { ArrowDownOutlined, ArrowUpOutlined } from "@ant-design/icons";
-import ChartDoughnut from "./ChartCard/ChartDoughnut";
 import ModelComponet from "./ModelComponet";
 
 interface CustomTheme {
   colorBgContainer: string;
   borderRadiusLG: string;
-  // Otros atributos del tema que puedas necesitar
 }
 
 const { Option } = Select;
@@ -32,14 +27,12 @@ const LayoutComponent: React.FC = () => {
     borderRadiusLG: "5px",
   };
 
-
   const [collapsed, setCollapsed] = useState(false);
   const [selectedStore, setSelectedStore] = useState<string | null>(null);
   const [locations, setLocations] = useState<Location[]>([]);
   const [store, setStore] = useState<string | undefined>();
   const [location, setLocation] = useState<string | undefined>();
   const [currentMenuItem, setCurrentMenuItem] = useState<string>("dashboard");
-
 
   const handleStoreChange = (value: string) => {
     setStore(value);
@@ -81,7 +74,6 @@ const LayoutComponent: React.FC = () => {
     setCurrentMenuItem("lg");
   };
 
-
   const getContent = () => {
     switch (currentMenuItem) {
       case "dashboard":
@@ -97,7 +89,7 @@ const LayoutComponent: React.FC = () => {
                 style={{ width: 200, marginRight: 10 }}
                 value={selectedStore}
               >
-                <Option value="falabella">Falabella</Option>
+                <Option value="ripley">Ripley</Option>
                 <Option value="paris">Paris</Option>
               </Select>
 
@@ -109,79 +101,27 @@ const LayoutComponent: React.FC = () => {
                 options={locations}
                 onChange={handleLocationChange}
               />
-
-              {store === "paris" && location === "parqueArauco" && (
-                <>
-                  <Col span={6}>
-                    <Card bordered={false}>
-                      <Statistic
-                        title="PARIS"
-                        value={95.30}
-                        precision={2}
-                        valueStyle={{ color: "#3f8600" }}
-                        prefix={<ArrowUpOutlined />}
-                        suffix="%"
-                      />
-                      <div style={{ height: "140px" }}>
-                        <ChartDoughnut />
-                      </div>
-                    </Card>
-                  </Col>
-                </>
-              )}
-              {store && !location && store !== "paris" && (
-                <>
-                  <Col span={6}>
-                    <Card bordered={false}>
-                      <Statistic
-                        title="FALABELLA"
-                        value={90.28}
-                        precision={2}
-                        valueStyle={{ color: "#3f8600" }}
-                        prefix={<ArrowUpOutlined />}
-                        suffix="%"
-                      />
-                      <div style={{ height: "140px" }}>
-                        <ChartDoughnut />
-                      </div>
-                    </Card>
-                  </Col>
-                </>
-              )}
             </div>
+            {store === "ripley" && location === "parqueArauco" && (
+              <>
+                <CollapseComponent />
+              </>
+            )}
             {store === "paris" && location === "parqueArauco" && (
               <>
                 <CollapseComponent />
               </>
             )}
-
-            {!store && !location && (
-              <div>
-                <Alert message="Seleccione una tienda" type="warning" />
-              </div>
-            )}
-
-            {store && !location && store !== "paris" && (
-              <div>
-                {/* <Alert message="Seleccione una ubicación" type="warning" /> */}
-                <ChartjsComponent onGoToModels={handleGoToModels} />;
-              </div>
-            )}
-
-            {store && location && store !== "paris" && (
-              <div>
-                <Alert
-                  message="No tenemos PLANOGRAMA para la tienda y ubicación seleccionada"
-                  type="error"
-                />
-              </div>
-            )}
           </>
         );
       case "model":
-        return (<ModelComponet onGoToModels={function (): void {
-          throw new Error("Function not implemented.");
-        }} />);
+        return (
+          <ModelComponet
+            onGoToModels={function (): void {
+              throw new Error("Function not implemented.");
+            }}
+          />
+        );
       case "settings":
         return <div>Aquí va la configuración</div>;
       default:

@@ -1,10 +1,11 @@
+// PlanogramaGeneral.tsx
 import React, { useState, useEffect } from "react";
-import ModalWithCarousel from "./modalWithCarousel";
+import ModalWithCarousel from "./modalWithCarousel.tsx";
 import _ from "lodash";
 import RGL, { WidthProvider } from "react-grid-layout";
-import { generateLayout } from "../utils/layoutUtilse.tsx";
+import { generateLayout } from "../utils/layoutUtils.tsx";
 import { LayoutItem } from "../interfaces/LayoutItem.tsx";
-import { Props } from "../interfaces/Props";
+import { Props } from "../interfaces/Props.tsx";
 import "react-grid-layout/css/styles.css";
 import "react-resizable/css/styles.css";
 import img_1 from "../assets/locales/img_1.jpg";
@@ -12,10 +13,9 @@ import img_2 from "../assets/locales/img_2.jpg";
 import img_3 from "../assets/locales/img_3.jpg";
 import ButtonContainer from "./ButtonContainer.tsx";
 
-
 const ReactGridLayout = WidthProvider(RGL);
 
-const NoCollisionLayout: React.FC<Props> = ({
+const PlanogramaGeneral: React.FC<Props> = ({
   className = "layout",
   cols = 84,
   rowHeight = 30,
@@ -30,14 +30,15 @@ const NoCollisionLayout: React.FC<Props> = ({
     setLayout(generateLayout());
   }, []);
 
-  const itemModal = (i: any) => {
-    console.log(i);
-  };
+  // const itemModal = (i: any) => {
+  //   console.log(i);
+  //   setIsOpen(true);
+  // };
 
   const generateDOM = () =>
     _.map(layout, (item) => (
       <div
-        onClick={() => itemModal(item.i)}
+        //onClick={() => itemModal(item.i)}
         key={item.i}
         style={{ backgroundColor: item.bgColor }}
       >
@@ -52,7 +53,7 @@ const NoCollisionLayout: React.FC<Props> = ({
       w: item.w,
       h: item.h,
       i: item.i,
-      bgColor: "",
+      bgColor: item.bgColor || "",
     }));
     onLayoutChange(newLayout);
   };
@@ -73,13 +74,13 @@ const NoCollisionLayout: React.FC<Props> = ({
 
   return (
     <>
-    
       <ModalWithCarousel
         isOpen={isOpen}
         onRequestClose={() => setIsOpen(false)}
         images={images}
       />
       <ButtonContainer addNewItem={addNewItem} />
+
       <ReactGridLayout
         cols={cols}
         layout={layout}
@@ -96,4 +97,4 @@ const NoCollisionLayout: React.FC<Props> = ({
   );
 };
 
-export default NoCollisionLayout;
+export default PlanogramaGeneral;

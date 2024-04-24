@@ -15,23 +15,21 @@ import img_5 from "../assets/paris_arauco/img_5.jpg";
 import img_6 from "../assets/paris_arauco/img_6.jpg";
 import img_7 from "../assets/paris_arauco/img_7.jpg";
 import img_8 from "../assets/paris_arauco/img_8.jpg";
-
-// import { ZoomInOutlined } from "@ant-design/icons";
-
 import { Switch } from "antd";
 
 const ReactGridLayout = WidthProvider(RGL);
 
-const planogramaF: React.FC<Props> = ({
+const PlanogramaLGComponent: React.FC<Props> = ({
   className = "layout",
   cols = 84,
   rowHeight = 30,
   isDraggable = false,
   isResizable = false,
-  onLayoutChange = () => { },
+  onLayoutChange = () => {},
   compactType = "vertical",
   preventCollision = false,
   verticalCompact = false,
+  allowOverlap = true,
 }) => {
   const [verMedidas, setVerMedidas] = useState(false);
   const [verDescripcion, setVerDescripcion] = useState(true);
@@ -44,7 +42,6 @@ const planogramaF: React.FC<Props> = ({
   }, []);
 
   const itemModal = (i: any) => {
-    console.log(i);
     setInPosition(i);
     setIsOpen(true);
   };
@@ -52,7 +49,7 @@ const planogramaF: React.FC<Props> = ({
   const generateDOM = () =>
     _.map(layout, (item) => (
       <div
-        onClick={() => itemModal(item.i)}
+        //onClick={() => itemModal(item.i)}
         key={item.i}
         style={{ backgroundColor: item.bgColor }}
       >
@@ -149,11 +146,12 @@ const planogramaF: React.FC<Props> = ({
         compactType={compactType}
         preventCollision={preventCollision}
         verticalCompact={verticalCompact}
+        allowOverlap={allowOverlap}
       >
         {generateDOM()}
-      </ReactGridLayout >
+      </ReactGridLayout>
     </>
   );
 };
 
-export default planogramaF;
+export default PlanogramaLGComponent;
