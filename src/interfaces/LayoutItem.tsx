@@ -5,5 +5,6 @@ export interface LayoutItem {
     h: number;
     i: string;
     bgColor: string;
+    category: string;
   }
   

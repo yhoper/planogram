@@ -1,4 +1,6 @@
 import { LayoutItem } from "../interfaces/LayoutItem";
+const lgArea = "rgb(182 52 93 / 14%)";
+const samsungArea = "#4096ff26";
 const pilar = "rgb(188 172 177 / 82%)";
 const lgColor = "#b6345d";
 const lgMobiliarioColor = "rgb(182 52 93 / 52%)";
@@ -7,6 +9,27 @@ const samsungColor = "#142a9fde";
 const samsungMobiliarioColor = "rgb(20 42 159 / 30%)";
 
 export const generateLayout = (): LayoutItem[] => [
+
+
+  {
+    x: 42,
+    y: 0,
+    w: 42,
+    h: 25,
+    i: "Area LG",
+    bgColor: lgArea,
+    category: "area",
+  },
+  {
+    x: 0,
+    y: 0,
+    w: 42.5,
+    h: 25,
+    i: "Area SAMSUNG",
+    bgColor: samsungArea,
+    category: "area",
+  },
+
   {
     x: 0,
     y: 0,
@@ -14,6 +37,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 4,
     i: "SAMSUNG TRASERA",
     bgColor: samsungMobiliarioColor,
+    category: "furniture",
   },
   {
     x: 0,
@@ -22,6 +46,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "50BU8000",
     bgColor: samsungColor,
+    category: "product",
   },
   {
     x: 0,
@@ -30,6 +55,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "HW-B650",
     bgColor: samsungColor,
+    category: "product",
   },
   {
     x: 0,
@@ -38,6 +64,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "HW-B550",
     bgColor: samsungColor,
+    category: "product",
   },
   {
     x: 0,
@@ -46,6 +73,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "HW-B450",
     bgColor: samsungColor,
+    category: "product",
   },
 
   {
@@ -55,6 +83,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "THE TERRACE",
     bgColor: samsungColor,
+    category: "product",
   },
 
   {
@@ -64,6 +93,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "85QN85B",
     bgColor: samsungColor,
+    category: "product",
   },
   {
     x: 21.1,
@@ -72,6 +102,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "HW-Q800B",
     bgColor: samsungColor,
+    category: "product",
   },
 
   {
@@ -81,6 +112,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "60Q65B",
     bgColor: samsungColor,
+    category: "product",
   },
 
   {
@@ -90,6 +122,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "55Q70A",
     bgColor: samsungColor,
+    category: "product",
   },
 
   {
@@ -99,6 +132,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 4,
     i: "SA-MOB-001",
     bgColor: samsungMobiliarioColor,
+    category: "furniture",
   },
 
   {
@@ -108,6 +142,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "65AU7090",
     bgColor: samsungColor,
+    category: "product",
   },
 
   {
@@ -117,6 +152,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "55Q700A",
     bgColor: samsungColor,
+    category: "product",
   },
 
   {
@@ -126,6 +162,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "MXT40",
     bgColor: samsungColor,
+    category: "product",
   },
 
   {
@@ -135,6 +172,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "MXT50",
     bgColor: samsungColor,
+    category: "product",
   },
   {
     x: 10.4,
@@ -143,6 +181,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "MXT70",
     bgColor: samsungColor,
+    category: "product",
   },
 
   {
@@ -152,6 +191,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "HW-Q600B",
     bgColor: samsungColor,
+    category: "product",
   },
 
   {
@@ -161,6 +201,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 3,
     i: "SA-MOB-002",
     bgColor: samsungMobiliarioColor,
+    category: "furniture",
   },
   {
     x: 17,
@@ -169,6 +210,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "50Q80B",
     bgColor: samsungColor,
+    category: "product",
   },
   {
     x: 17,
@@ -177,6 +219,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "55Q80B",
     bgColor: samsungColor,
+    category: "product",
   },
 
   {
@@ -186,6 +229,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 5,
     i: "SA-MOB-003",
     bgColor: samsungMobiliarioColor,
+    category: "furniture",
   },
   {
     x: 29,
@@ -194,6 +238,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "75QN85B",
     bgColor: samsungColor,
+    category: "product",
   },
   {
     x: 34.2,
@@ -202,6 +247,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "70BU8000",
     bgColor: samsungColor,
+    category: "product",
   },
 
   {
@@ -211,6 +257,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "HW-A650",
     bgColor: samsungColor,
+    category: "product",
   },
   {
     x: 34.2,
@@ -219,6 +266,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "HW-A550",
     bgColor: samsungColor,
+    category: "product",
   },
 
   {
@@ -228,6 +276,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 3,
     i: "SA-MOB-005",
     bgColor: samsungMobiliarioColor,
+    category: "furniture",
   },
 
   {
@@ -237,6 +286,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "65BU8000",
     bgColor: samsungColor,
+    category: "product",
   },
 
   {
@@ -246,6 +296,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "65S95B",
     bgColor: samsungColor,
+    category: "product",
   },
 
   {
@@ -255,6 +306,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 3,
     i: "SA-MOB-008",
     bgColor: samsungMobiliarioColor,
+    category: "furniture",
   },
 
   {
@@ -264,6 +316,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "THE FRAME 55''",
     bgColor: samsungColor,
+    category: "product",
   },
 
   {
@@ -273,6 +326,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "55QN700B",
     bgColor: samsungColor,
+    category: "product",
   },
 
   {
@@ -282,6 +336,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "65QN85B",
     bgColor: samsungColor,
+    category: "product",
   },
 
   {
@@ -291,6 +346,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "55QN90B",
     bgColor: samsungColor,
+    category: "product",
   },
 
   {
@@ -300,6 +356,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 3,
     i: "SA-MOB-006",
     bgColor: samsungMobiliarioColor,
+    category: "furniture",
   },
 
   {
@@ -309,6 +366,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "THE SERIF 50''",
     bgColor: samsungColor,
+    category: "product",
   },
 
   {
@@ -318,6 +376,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "HW-S801B",
     bgColor: samsungColor,
+    category: "product",
   },
 
   {
@@ -327,6 +386,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "THE FRAME 43'",
     bgColor: samsungColor,
+    category: "product",
   },
   {
     x: 38,
@@ -335,6 +395,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "THE FRAME 32'",
     bgColor: samsungColor,
+    category: "product",
   },
 
   {
@@ -344,6 +405,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 4,
     i: "SA-MOB-004",
     bgColor: samsungMobiliarioColor,
+    category: "furniture",
   },
 
   {
@@ -353,6 +415,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "50Q65B",
     bgColor: samsungColor,
+    category: "product",
   },
 
   {
@@ -362,6 +425,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "43QN90B",
     bgColor: samsungColor,
+    category: "product",
   },
   {
     x: 1,
@@ -370,6 +434,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "HW-Q700B",
     bgColor: samsungColor,
+    category: "product",
   },
 
   {
@@ -379,6 +444,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 4,
     i: "SA-MOB-007",
     bgColor: samsungMobiliarioColor,
+    category: "furniture",
   },
 
   {
@@ -388,6 +454,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "THE SERO",
     bgColor: samsungColor,
+    category: "product",
   },
   {
     x: 1,
@@ -396,6 +463,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "THE SERIF 55",
     bgColor: samsungColor,
+    category: "product",
   },
 
   {
@@ -405,6 +473,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 4,
     i: "LG TRASERA",
     bgColor: lgMobiliarioColor,
+    category: "product",
   },
 
   {
@@ -414,6 +483,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "75QNED90",
     bgColor: lgColor,
+    category: "product",
   },
   {
     x: 42,
@@ -422,6 +492,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "SN6",
     bgColor: lgColor,
+    category: "product",
   },
 
   {
@@ -431,6 +502,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "77G2",
     bgColor: lgColor,
+    category: "product",
   },
 
   {
@@ -440,6 +512,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "65A2",
     bgColor: lgColor,
+    category: "product",
   },
 
   {
@@ -449,6 +522,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 4,
     i: "PILAR",
     bgColor: pilar,
+    category: "pilar",
   },
   {
     x: 74,
@@ -457,6 +531,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "43UQ7500",
     bgColor: lgColor,
+    category: "product",
   },
   {
     x: 74,
@@ -465,6 +540,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "SN4",
     bgColor: lgColor,
+    category: "product",
   },
   {
     x: 74,
@@ -473,6 +549,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "SP2",
     bgColor: lgColor,
+    category: "product",
   },
   {
     x: 74,
@@ -481,6 +558,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "OL45	",
     bgColor: lgColor,
+    category: "product",
   },
 
   {
@@ -490,6 +568,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 10,
     i: "LG-MOB-001",
     bgColor: lgMobiliarioColor,
+    category: "product",
   },
   {
     x: 42,
@@ -498,6 +577,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "55UP7760",
     bgColor: lgColor,
+    category: "product",
   },
   {
     x: 42,
@@ -506,6 +586,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "65NANO75",
     bgColor: lgColor,
+    category: "product",
   },
   {
     x: 48,
@@ -514,6 +595,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "65UP7760",
     bgColor: lgColor,
+    category: "product",
   },
   {
     x: 42,
@@ -522,6 +604,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "65QNED90",
     bgColor: lgColor,
+    category: "product",
   },
   {
     x: 48,
@@ -530,6 +613,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "60UQ8050",
     bgColor: lgColor,
+    category: "product",
   },
   {
     x: 42,
@@ -538,6 +622,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "75QNED85",
     bgColor: lgColor,
+    category: "product",
   },
 
   {
@@ -547,6 +632,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 10,
     i: "LG-MOB-002",
     bgColor: lgMobiliarioColor,
+    category: "product",
   },
 
   {
@@ -556,6 +642,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "43NANO75",
     bgColor: lgColor,
+    category: "product",
   },
   {
     x: 57,
@@ -564,6 +651,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "55QNED80",
     bgColor: lgColor,
+    category: "product",
   },
   {
     x: 63,
@@ -572,6 +660,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "OLED55B2",
     bgColor: lgColor,
+    category: "product",
   },
   {
     x: 57,
@@ -580,6 +669,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "65NANO80",
     bgColor: lgColor,
+    category: "product",
   },
   {
     x: 63,
@@ -588,6 +678,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "OLED55C2",
     bgColor: lgColor,
+    category: "product",
   },
   {
     x: 57,
@@ -596,6 +687,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "OLED83C1",
     bgColor: lgColor,
+    category: "product",
   },
 
   {
@@ -605,6 +697,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 10,
     i: "LG-MOB-003",
     bgColor: lgMobiliarioColor,
+    category: "product",
   },
 
   {
@@ -614,6 +707,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "1-43NANO75",
     bgColor: lgColor,
+    category: "product",
   },
   {
     x: 84,
@@ -622,6 +716,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "RN5",
     bgColor: lgColor,
+    category: "product",
   },
   {
     x: 84,
@@ -630,6 +725,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "50UQ9050",
     bgColor: lgColor,
+    category: "product",
   },
   {
     x: 84,
@@ -638,6 +734,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "RN5",
     bgColor: lgColor,
+    category: "product",
   },
   {
     x: 72,
@@ -646,6 +743,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "RN7",
     bgColor: lgColor,
+    category: "product",
   },
   {
     x: 72,
@@ -654,6 +752,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "STANDBEMY",
     bgColor: lgColor,
+    category: "product",
   },
   {
     x: 76,
@@ -662,6 +761,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "RN9",
     bgColor: lgColor,
+    category: "product",
   },
   {
     x: 72,
@@ -670,6 +770,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "OLED48C2",
     bgColor: lgColor,
+    category: "product",
   },
   {
     x: 72,
@@ -678,6 +779,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "FN6",
     bgColor: lgColor,
+    category: "product",
   },
   {
     x: 72,
@@ -686,6 +788,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "QP5W",
     bgColor: lgColor,
+    category: "product",
   },
   {
     x: 84,
@@ -694,6 +797,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "55UQ8050",
     bgColor: lgColor,
+    category: "product",
   },
   {
     x: 84,
@@ -702,6 +806,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "OLED65C2",
     bgColor: lgColor,
+    category: "product",
   },
 
   {
@@ -711,6 +816,7 @@ export const generateLayout = (): LayoutItem[] => [
     h: 6,
     i: "LG-PILAR-004",
     bgColor: pilar,
+    category: "pilar",
   },
   {
     x: 72,
@@ -719,5 +825,9 @@ export const generateLayout = (): LayoutItem[] => [
     h: 1,
     i: "OLED42C2",
     bgColor: lgColor,
+    category: "product",
   },
+
+
+
 ];
