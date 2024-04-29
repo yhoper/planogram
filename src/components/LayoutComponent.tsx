@@ -87,7 +87,7 @@ const LayoutComponent: React.FC = () => {
                 value={selectedStore}
               >
                 <Option value="ripley">Ripley</Option>
-                <Option value="paris">Paris</Option>
+                
               </Select>
 
               <Select

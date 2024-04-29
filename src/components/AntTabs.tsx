@@ -1,8 +1,8 @@
 import { Tabs } from "antd";
 import type { TabsProps } from "antd";
-import PlanogramaGeneral from "./PlanogramaGeneralComponent";
-import PlanogramaLG from "./PlanogramaLGComponent";
 import PlanogramaGeneralRipley from "./PlanogramaGeneralRipley";
+import PlanogramaGeneralRipleyMain from "./PlanogramaGeneralRipleyMain";
+
 import History from "./History";
 
 const AntTabs = () => {
@@ -13,28 +13,23 @@ const AntTabs = () => {
   const items: TabsProps["items"] = [
     {
       key: "1",
-      label: "LG Main",
-      children: <PlanogramaLG allowOverlap={false} />,
+      label: "Ripley General",
+      children: <PlanogramaGeneralRipley allowOverlap={false} />,
     },
     {
       key: "2",
-      label: "LG Store ",
-      children: <PlanogramaLG allowOverlap={false} />,
+      label: "Ripley Main",
+      children: <PlanogramaGeneralRipleyMain allowOverlap={false} />,
     },
     {
       key: "3",
-      label: "General",
-      children: <PlanogramaGeneral allowOverlap={false} />,
+      label: "Ripley Store",
+      children: <PlanogramaGeneralRipleyMain allowOverlap={false} />,
     },
     {
       key: "4",
       label: "Historial",
       children: <History />,
-    },
-    {
-      key: "5",
-      label: "Ripley",
-      children: <PlanogramaGeneralRipley allowOverlap={false} />,
     },
   ];
 
