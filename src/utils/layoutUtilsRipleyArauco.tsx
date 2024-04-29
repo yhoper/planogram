@@ -1,4 +1,5 @@
 import { LayoutItem } from "../interfaces/LayoutItem";
+const pilar = "rgb(188 172 177 / 82%)";
 const lgColor = "#b6345d";
 const lgMobiliarioColor = "rgb(182 52 93 / 52%)";
 
@@ -203,7 +204,6 @@ export const generateLayout = (): LayoutItem[] => [
     bgColor: samsungColor,
   },
 
-
   {
     x: 29,
     y: 8,
@@ -404,6 +404,82 @@ export const generateLayout = (): LayoutItem[] => [
     w: 42,
     h: 4,
     i: "LG TRASERA",
+    bgColor: lgMobiliarioColor,
+  },
+
+  {
+    x: 42,
+    y: 2,
+    w: 9,
+    h: 1,
+    i: "75QNED90",
+    bgColor: lgColor,
+  },
+  {
+    x: 42,
+    y: 3,
+    w: 9,
+    h: 1,
+    i: "SN6",
+    bgColor: lgColor,
+  },
+
+  {
+    x: 50.6,
+    y: 2,
+    w: 9,
+    h: 1,
+    i: "77G2",
+    bgColor: lgColor,
+  },
+
+  {
+    x: 59.2,
+    y: 2,
+    w: 9,
+    h: 1,
+    i: "65A2",
+    bgColor: lgColor,
+  },
+
+  {
+    x: 79,
+    y: 0,
+    w: 10,
+    h: 4,
+    i: "PILAR",
+    bgColor: pilar,
+  },
+  {
+    x: 74,
+    y: 0,
+    w: 4,
+    h: 1,
+    i: "43UQ7500",
+    bgColor: lgColor,
+  },
+  {
+    x: 74,
+    y: 1,
+    w: 4,
+    h: 1,
+    i: "SN4",
+    bgColor: lgColor,
+  },
+  {
+    x: 74,
+    y: 2,
+    w: 4,
+    h: 1,
+    i: "SP2",
+    bgColor: lgColor,
+  },
+  {
+    x: 74,
+    y: 3,
+    w: 4,
+    h: 1,
+    i: "OL45	",
     bgColor: lgColor,
   },
 
@@ -634,7 +710,7 @@ export const generateLayout = (): LayoutItem[] => [
     w: 12,
     h: 6,
     i: "LG-PILAR-004",
-    bgColor: lgMobiliarioColor,
+    bgColor: pilar,
   },
   {
     x: 72,
