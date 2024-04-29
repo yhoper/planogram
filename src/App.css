@@ -2006,3 +2006,12 @@ img.download_assets__thumb {
 .contnantCalendar{
   display: flex;
 }
+
+.contentCloseModal {
+  background-color: #e6e1d6;
+  border-bottom: .0625rem solid #cbc8c2;
+}
+.slick-slider.slick-initialized {
+  background-color: #f0ece4;
+  border-bottom: .0625rem solid #cbc8c2;
+}

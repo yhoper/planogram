@@ -35,17 +35,24 @@ const ModalWithCarousel: React.FC<ModalProps> = ({
       id="centerModal"
     >
       <div className="contentCloseModal">
-      <button className="closeModal" onClick={onRequestClose}>X</button>
+        <button className="closeModal" onClick={onRequestClose}>
+          X
+        </button>
       </div>
       <Slider {...settings}>
         {images.map((image, index) => (
           <div key={index}>
-            <img style={{maxHeight:"300px"}} src={image} alt={`Slide ${index + 1}`} />
+            <img
+              style={{ maxHeight: "300px" }}
+              src={image}
+              alt={`Slide ${index + 1}`}
+            />
           </div>
         ))}
       </Slider>
       <p>
-        Foto: {currentSlide + 1} de {images.length} <span className="dateModal">25 Abril 2024</span>
+        Foto: {currentSlide + 1} de {images.length}{" "}
+        <span className="dateModal">25 Abril 2024</span>
       </p>
     </Modal>
   );
