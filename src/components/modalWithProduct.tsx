@@ -116,6 +116,7 @@ const ModalWithProduct: React.FC<ModalProps> = ({
       </Slider>
       <Divider></Divider>
       <Select
+        className="selectModel"
         showSearch
         placeholder="Selecciona la medida"
         optionFilterProp="children"
@@ -152,6 +153,7 @@ const ModalWithProduct: React.FC<ModalProps> = ({
 
       {selectedInches && (
         <Select
+          className="selectModel"
           showSearch
           placeholder="Selecciona el modelo"
           optionFilterProp="children"

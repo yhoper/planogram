@@ -11,20 +11,21 @@ const AntTabs = () => {
   };
 
   const items: TabsProps["items"] = [
+    
     {
       key: "1",
-      label: "Ripley General",
-      children: <PlanogramaGeneralRipley allowOverlap={false} />,
-    },
-    {
-      key: "2",
       label: "Ripley Main",
       children: <PlanogramaGeneralRipleyMain allowOverlap={false} />,
     },
     {
-      key: "3",
+      key: "2",
       label: "Ripley Store",
       children: <PlanogramaGeneralRipleyMain allowOverlap={false} />,
+    },
+    {
+      key: "3",
+      label: "Ripley General",
+      children: <PlanogramaGeneralRipley allowOverlap={false} />,
     },
     {
       key: "4",

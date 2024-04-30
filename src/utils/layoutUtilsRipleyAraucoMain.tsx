@@ -1,12 +1,8 @@
 import { LayoutItem } from "../interfaces/LayoutItem";
 const lgArea = "rgb(182 52 93 / 14%)";
-const samsungArea = "#4096ff26";
 const pilar = "rgb(188 172 177 / 82%)";
 const lgColor = "#b6345d";
 const lgMobiliarioColor = "rgb(182 52 93 / 52%)";
-
-const samsungColor = "#142a9fde";
-const samsungMobiliarioColor = "rgb(20 42 159 / 30%)";
 
 export const generateLayoutRipleyMain = (): LayoutItem[] => [
   {
@@ -25,7 +21,7 @@ export const generateLayoutRipleyMain = (): LayoutItem[] => [
     h: 4,
     i: "LG TRASERA",
     bgColor: lgMobiliarioColor,
-    category: "product",
+    category: "furniture",
   },
   {
     x: 0,
@@ -115,7 +111,7 @@ export const generateLayoutRipleyMain = (): LayoutItem[] => [
     h: 17,
     i: "LG-MOB-001",
     bgColor: lgMobiliarioColor,
-    category: "product",
+    category: "furniture",
   },
   {
     x: 0,
@@ -178,7 +174,7 @@ export const generateLayoutRipleyMain = (): LayoutItem[] => [
     h: 17,
     i: "LG-MOB-002",
     bgColor: lgMobiliarioColor,
-    category: "product",
+    category: "furniture",
   },
   {
     x: 23,
@@ -241,7 +237,7 @@ export const generateLayoutRipleyMain = (): LayoutItem[] => [
     h: 17,
     i: "LG-MOB-003",
     bgColor: lgMobiliarioColor,
-    category: "product",
+    category: "furniture",
   },
   {
     x: 46,

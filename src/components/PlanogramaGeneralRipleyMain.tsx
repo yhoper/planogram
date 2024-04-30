@@ -38,6 +38,8 @@ const PlanogramaGeneralRipleyMain: React.FC<Props> = ({
   const [layout, setLayout] = useState<LayoutItem[]>([]);
 
   const [blockItem, setBlockItem] = useState(false);
+  const [measureFurniture, setMeasureFurniture] = useState(false);
+  const [measureAreaCol, setMeasureAreaCol] = useState(false);
   const [verDescripcion, setVerDescripcion] = useState(true);
 
   useEffect(() => {
@@ -50,8 +52,6 @@ const PlanogramaGeneralRipleyMain: React.FC<Props> = ({
         {verDescripcion === true && <span className="text">{item.i}</span>}
         {blockItem === true && (
           <div className="menuItems">
-            {/* <ExpandAltOutlined onClick={() => handleRemoveItem(item.i)} /> */}
-
             <Dropdown menu={{ items }}>
               <a onClick={(e) => e.preventDefault()}>
                 <Space>
@@ -60,6 +60,35 @@ const PlanogramaGeneralRipleyMain: React.FC<Props> = ({
               </a>
             </Dropdown>
           </div>
+        )}
+
+        {measureFurniture && item.category === "furniture" && (
+          <>
+            <div className="containterMeasureX">
+              <div className="measureXLineL"></div>
+              <div className="measureXTxt">288 cm</div>
+              <div className="measureXLineR"></div>
+            </div>
+
+            <div className="containterMeasureY">
+              <div className="measureYTxt">290 cm</div>
+            </div>
+          </>
+        )}
+
+        {((measureAreaCol && item.category === "area") ||
+          (measureAreaCol && item.category === "pilar")) && (
+          <>
+            <div className="containterMeasureX">
+              <div className="measureXLineL"></div>
+              <div className="measureXTxt">288 cm</div>
+              <div className="measureXLineR"></div>
+            </div>
+
+            <div className="containterMeasureY">
+              <div className="measureYTxt">290 cm</div>
+            </div>
+          </>
         )}
       </div>
     ));
@@ -99,6 +128,13 @@ const PlanogramaGeneralRipleyMain: React.FC<Props> = ({
     setBlockItem(checked);
   };
 
+  const handleMeasureChange = (checked: any) => {
+    setMeasureFurniture(checked);
+  };
+  const handleMeasureAreaColChange = (checked: any) => {
+    setMeasureAreaCol(checked);
+  };
+
   const handleDescripcionChange = (checked: any) => {
     setVerDescripcion(checked);
   };
@@ -123,6 +159,10 @@ const PlanogramaGeneralRipleyMain: React.FC<Props> = ({
     {
       key: "2",
       label: <a onClick={() => itemModalProducts()}>Actualizar producto</a>,
+    },
+    {
+      key: "3",
+      label: <a onClick={() => itemModalProducts()}>Elminar item</a>,
     },
   ];
 
@@ -170,6 +210,23 @@ const PlanogramaGeneralRipleyMain: React.FC<Props> = ({
             size="small"
           />
           Bloquear items
+        </div>
+
+        <div className="switchDescription">
+          <Switch
+            defaultChecked={measureFurniture}
+            onChange={handleMeasureChange}
+            size="small"
+          />
+          Medidas en Mobiliario
+        </div>
+        <div className="switchDescription">
+          <Switch
+            defaultChecked={measureAreaCol}
+            onChange={handleMeasureAreaColChange}
+            size="small"
+          />
+          Medidas en Area y Columna
         </div>
       </div>
 

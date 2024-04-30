@@ -1994,7 +1994,6 @@ img.download_assets__thumb {
   padding: 14px;
 }
 
-
 .layoutSelect.twocol {
   display: flex;
 }
@@ -2003,15 +2002,19 @@ img.download_assets__thumb {
   display: flex;
 }
 
-.contnantCalendar{
+.contnantCalendar {
   display: flex;
 }
 
 .contentCloseModal {
   background-color: #e6e1d6;
-  border-bottom: .0625rem solid #cbc8c2;
+  border-bottom: 0.0625rem solid #cbc8c2;
 }
 .slick-slider.slick-initialized {
   background-color: #f0ece4;
-  border-bottom: .0625rem solid #cbc8c2;
+  border-bottom: 0.0625rem solid #cbc8c2;
+}
+
+.selectModel {
+  margin-right: 20px;
 }
