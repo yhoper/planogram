@@ -13,6 +13,8 @@ export const generateLayoutRipleyMain = (): LayoutItem[] => [
     i: "Area LG",
     bgColor: lgArea,
     category: "area",
+    lenght: 7.50,
+    width: 8.70,
   },
   {
     x: 0,
@@ -22,6 +24,8 @@ export const generateLayoutRipleyMain = (): LayoutItem[] => [
     i: "LG TRASERA",
     bgColor: lgMobiliarioColor,
     category: "furniture",
+    lenght: 4.48,
+    width: 2.41,
   },
   {
     x: 0,
@@ -31,6 +35,8 @@ export const generateLayoutRipleyMain = (): LayoutItem[] => [
     i: "75QNED90",
     bgColor: lgColor,
     category: "product",
+    lenght: 7,
+    width: 4,
   },
   {
     x: 0,
@@ -40,6 +46,8 @@ export const generateLayoutRipleyMain = (): LayoutItem[] => [
     i: "SN6",
     bgColor: lgColor,
     category: "product",
+    lenght: 11,
+    width: 3,
   },
   {
     x: 24,
@@ -49,6 +57,8 @@ export const generateLayoutRipleyMain = (): LayoutItem[] => [
     i: "77G2",
     bgColor: lgColor,
     category: "product",
+    lenght: 11,
+    width: 3,
   },
   {
     x: 48,
@@ -58,6 +68,8 @@ export const generateLayoutRipleyMain = (): LayoutItem[] => [
     i: "65A2",
     bgColor: lgColor,
     category: "product",
+    lenght: 9,
+    width: 3,
   },
   {
     x: 79,
@@ -67,6 +79,8 @@ export const generateLayoutRipleyMain = (): LayoutItem[] => [
     i: "PILAR",
     bgColor: pilar,
     category: "pilar",
+    lenght: 1.33,
+    width: 1.1,
   },
   {
     x: 74,
@@ -76,6 +90,8 @@ export const generateLayoutRipleyMain = (): LayoutItem[] => [
     i: "43UQ7500",
     bgColor: lgColor,
     category: "product",
+    lenght: 9,
+    width: 4,
   },
   {
     x: 74,
@@ -85,6 +101,8 @@ export const generateLayoutRipleyMain = (): LayoutItem[] => [
     i: "SN4",
     bgColor: lgColor,
     category: "product",
+    lenght: 6,
+    width: 3,
   },
   {
     x: 74,
@@ -94,6 +112,8 @@ export const generateLayoutRipleyMain = (): LayoutItem[] => [
     i: "SP2",
     bgColor: lgColor,
     category: "product",
+    lenght: 6,
+    width: 5,
   },
   {
     x: 74,
@@ -103,6 +123,8 @@ export const generateLayoutRipleyMain = (): LayoutItem[] => [
     i: "OL45	",
     bgColor: lgColor,
     category: "product",
+    lenght: 13,
+    width: 3,
   },
   {
     x: 0,
@@ -112,15 +134,19 @@ export const generateLayoutRipleyMain = (): LayoutItem[] => [
     i: "LG-MOB-001",
     bgColor: lgMobiliarioColor,
     category: "furniture",
+    lenght: 1.65,
+    width: 4,
   },
   {
     x: 0,
-    y: 5,
+    y: 6,
     w: 20,
     h: 1,
     i: "55UP7760",
     bgColor: lgColor,
     category: "product",
+    lenght: 10,
+    width: 5,
   },
   {
     x: 0,
@@ -130,6 +156,8 @@ export const generateLayoutRipleyMain = (): LayoutItem[] => [
     i: "65NANO75",
     bgColor: lgColor,
     category: "product",
+    lenght: 10,
+    width: 3,
   },
   {
     x: 10,
@@ -139,6 +167,8 @@ export const generateLayoutRipleyMain = (): LayoutItem[] => [
     i: "65UP7760",
     bgColor: lgColor,
     category: "product",
+    lenght: 7,
+    width: 3,
   },
   {
     x: 0,
@@ -148,6 +178,8 @@ export const generateLayoutRipleyMain = (): LayoutItem[] => [
     i: "65QNED90",
     bgColor: lgColor,
     category: "product",
+    lenght: 8,
+    width: 5,
   },
   {
     x: 10,
@@ -157,6 +189,8 @@ export const generateLayoutRipleyMain = (): LayoutItem[] => [
     i: "60UQ8050",
     bgColor: lgColor,
     category: "product",
+    lenght: 13,
+    width: 5,
   },
   {
     x: 0,
@@ -166,6 +200,8 @@ export const generateLayoutRipleyMain = (): LayoutItem[] => [
     i: "75QNED85",
     bgColor: lgColor,
     category: "product",
+    lenght: 10,
+    width: 5,
   },
   {
     x: 23,
@@ -175,15 +211,19 @@ export const generateLayoutRipleyMain = (): LayoutItem[] => [
     i: "LG-MOB-002",
     bgColor: lgMobiliarioColor,
     category: "furniture",
+    lenght: 1.65,
+    width: 4,
   },
   {
     x: 23,
-    y: 5,
+    y: 6,
     w: 20,
     h: 1,
     i: "43NANO75",
     bgColor: lgColor,
     category: "product",
+    lenght: 8,
+    width: 3,
   },
   {
     x: 23,
@@ -193,6 +233,8 @@ export const generateLayoutRipleyMain = (): LayoutItem[] => [
     i: "55QNED80",
     bgColor: lgColor,
     category: "product",
+    lenght: 6,
+    width: 2,
   },
   {
     x: 33,
@@ -202,6 +244,8 @@ export const generateLayoutRipleyMain = (): LayoutItem[] => [
     i: "OLED55B2",
     bgColor: lgColor,
     category: "product",
+    lenght: 7,
+    width: 5,
   },
   {
     x: 23,
@@ -211,6 +255,8 @@ export const generateLayoutRipleyMain = (): LayoutItem[] => [
     i: "65NANO80",
     bgColor: lgColor,
     category: "product",
+    lenght: 11,
+    width: 3,
   },
   {
     x: 33,
@@ -220,6 +266,8 @@ export const generateLayoutRipleyMain = (): LayoutItem[] => [
     i: "OLED55C2",
     bgColor: lgColor,
     category: "product",
+    lenght: 9,
+    width: 2,
   },
   {
     x: 23,
@@ -229,6 +277,8 @@ export const generateLayoutRipleyMain = (): LayoutItem[] => [
     i: "OLED83C1",
     bgColor: lgColor,
     category: "product",
+    lenght: 12,
+    width: 3,
   },
   {
     x: 46,
@@ -238,15 +288,19 @@ export const generateLayoutRipleyMain = (): LayoutItem[] => [
     i: "LG-MOB-003",
     bgColor: lgMobiliarioColor,
     category: "furniture",
+    lenght: 1.65,
+    width: 4,
   },
   {
     x: 46,
-    y: 5,
+    y: 6,
     w: 20,
     h: 1,
     i: "1-43NANO75",
     bgColor: lgColor,
     category: "product",
+    lenght: 12,
+    width: 3,
   },
   {
     x: 60,
@@ -256,6 +310,8 @@ export const generateLayoutRipleyMain = (): LayoutItem[] => [
     i: "RN5",
     bgColor: lgColor,
     category: "product",
+    lenght: 12,
+    width: 5,
   },
   {
     x: 60,
@@ -265,7 +321,9 @@ export const generateLayoutRipleyMain = (): LayoutItem[] => [
     i: "50UQ9050",
     bgColor: lgColor,
     category: "product",
-  }, 
+    lenght: 10,
+    width: 2,
+  },
   {
     x: 46,
     y: 7,
@@ -274,6 +332,8 @@ export const generateLayoutRipleyMain = (): LayoutItem[] => [
     i: "RN7",
     bgColor: lgColor,
     category: "product",
+    lenght: 12,
+    width: 2,
   },
   {
     x: 46,
@@ -283,6 +343,8 @@ export const generateLayoutRipleyMain = (): LayoutItem[] => [
     i: "STANDBEMY",
     bgColor: lgColor,
     category: "product",
+    lenght: 7,
+    width: 3,
   },
   {
     x: 53,
@@ -292,6 +354,8 @@ export const generateLayoutRipleyMain = (): LayoutItem[] => [
     i: "RN9",
     bgColor: lgColor,
     category: "product",
+    lenght: 10,
+    width: 5,
   },
   {
     x: 46,
@@ -301,6 +365,8 @@ export const generateLayoutRipleyMain = (): LayoutItem[] => [
     i: "OLED48C2",
     bgColor: lgColor,
     category: "product",
+    lenght: 11,
+    width: 2,
   },
   {
     x: 46,
@@ -310,6 +376,8 @@ export const generateLayoutRipleyMain = (): LayoutItem[] => [
     i: "FN6",
     bgColor: lgColor,
     category: "product",
+    lenght: 7,
+    width: 4,
   },
   {
     x: 46,
@@ -319,6 +387,8 @@ export const generateLayoutRipleyMain = (): LayoutItem[] => [
     i: "QP5W",
     bgColor: lgColor,
     category: "product",
+    lenght: 11,
+    width: 3,
   },
   {
     x: 60,
@@ -328,6 +398,8 @@ export const generateLayoutRipleyMain = (): LayoutItem[] => [
     i: "55UQ8050",
     bgColor: lgColor,
     category: "product",
+    lenght: 12,
+    width: 2,
   },
   {
     x: 46,
@@ -337,23 +409,29 @@ export const generateLayoutRipleyMain = (): LayoutItem[] => [
     i: "OLED65C2",
     bgColor: lgColor,
     category: "product",
+    lenght: 6,
+    width: 5,
   },
   {
     x: 74,
-    y: 16,
-    w: 12,
-    h: 6,
+    y: 18,
+    w: 10,
+    h: 4,
     i: "LG-PILAR-004",
     bgColor: pilar,
     category: "pilar",
+    lenght: 1.33,
+    width: 1.1,
   },
   {
-    x: 72,
+    x: 75,
     y: 20,
     w: 6,
     h: 1,
     i: "OLED42C2",
     bgColor: lgColor,
     category: "product",
+    lenght: 9,
+    width: 3,
   },
 ];

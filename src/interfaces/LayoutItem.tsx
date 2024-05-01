@@ -6,5 +6,7 @@ export interface LayoutItem {
     i: string;
     bgColor: string;
     category: string;
+    lenght: number;
+    width: number;
   }
   

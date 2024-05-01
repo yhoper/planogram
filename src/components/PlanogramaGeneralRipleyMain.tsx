@@ -4,7 +4,7 @@ import RGL, { WidthProvider } from "react-grid-layout";
 import { generateLayoutRipleyMain } from "../utils/layoutUtilsRipleyAraucoMain.tsx";
 import { LayoutItem } from "../interfaces/LayoutItem.tsx";
 import { Props } from "../interfaces/Props.tsx";
-import { Switch } from "antd";
+import { Divider, Switch } from "antd";
 import "react-grid-layout/css/styles.css";
 import "react-resizable/css/styles.css";
 import ModalWithCarousel from "./modalWithCarousel.tsx";
@@ -16,10 +16,19 @@ import img_5 from "../assets/paris_arauco/img_5.jpg";
 import img_6 from "../assets/paris_arauco/img_6.jpg";
 import img_7 from "../assets/paris_arauco/img_7.jpg";
 import img_8 from "../assets/paris_arauco/img_8.jpg";
-import { DownOutlined } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import { Dropdown, Space } from "antd";
 import ModalWithProduct from "./modalWithProduct.tsx";
+
+import ChartDoughnut from "./ChartCard/ChartDoughnut";
+import { Card, Col, Row, Statistic, Button, Flex, Tooltip } from "antd";
+import {
+  DownOutlined,
+  SearchOutlined,
+  ArrowDownOutlined,
+  PlusCircleOutlined,
+  GatewayOutlined,
+} from "@ant-design/icons";
 
 const ReactGridLayout = WidthProvider(RGL);
 
@@ -42,56 +51,149 @@ const PlanogramaGeneralRipleyMain: React.FC<Props> = ({
   const [measureAreaCol, setMeasureAreaCol] = useState(false);
   const [verDescripcion, setVerDescripcion] = useState(true);
 
+  const areaFurniture: number[] = [];
+  const [totalAreaFurniture, setTotalAreaFurniture] = useState(0);
+  const areaStore: number[] = [];
+  const [totalAreaStore, setTotalAreaStore] = useState(0);
   useEffect(() => {
     setLayout(generateLayoutRipleyMain());
   }, []);
 
-  const generateDOM = () =>
-    _.map(layout, (item) => (
-      <div key={item.i} style={{ backgroundColor: item.bgColor }}>
-        {verDescripcion === true && <span className="text">{item.i}</span>}
-        {blockItem === true && (
-          <div className="menuItems">
-            <Dropdown menu={{ items }}>
-              <a onClick={(e) => e.preventDefault()}>
-                <Space>
-                  <DownOutlined />
-                </Space>
-              </a>
-            </Dropdown>
-          </div>
-        )}
-
-        {measureFurniture && item.category === "furniture" && (
+  const generateDOM = () => {
+    const renderAreaMeasurements = (item) => {
+      if (
+        (measureAreaCol && item.category === "area") ||
+        (measureAreaCol && item.category === "pilar")
+      ) {
+        return (
           <>
             <div className="containterMeasureX">
               <div className="measureXLineL"></div>
-              <div className="measureXTxt">288 cm</div>
+              <div className="measureXTxt">{item.width} mts</div>
               <div className="measureXLineR"></div>
             </div>
 
             <div className="containterMeasureY">
-              <div className="measureYTxt">290 cm</div>
+              <div className="measureYTxt">{item.lenght} mts</div>
             </div>
           </>
-        )}
+        );
+      }
+      return null;
+    };
 
-        {((measureAreaCol && item.category === "area") ||
-          (measureAreaCol && item.category === "pilar")) && (
+    const renderFurnitureMeasurements = (item) => {
+      if (measureFurniture && item.category === "furniture") {
+        return (
           <>
             <div className="containterMeasureX">
               <div className="measureXLineL"></div>
-              <div className="measureXTxt">288 cm</div>
+              <div className="measureXTxt">{item.lenght} mts.</div>
               <div className="measureXLineR"></div>
             </div>
 
             <div className="containterMeasureY">
-              <div className="measureYTxt">290 cm</div>
+              <div className="measureYTxt">{item.width} mts.</div>
             </div>
           </>
-        )}
-      </div>
-    ));
+        );
+      }
+      return null;
+    };
+
+    const calculateArea = (item) => {
+      if (item.category === "furniture" || item.category === "area") {
+        return item.width * item.lenght;
+      }
+      return null;
+    };
+
+    const updatedLayout = layout.map((item) => {
+      if (item.category === "furniture") {
+        areaFurniture.push(calculateArea(item));
+      } else if (item.category === "area") {
+        areaStore.push(calculateArea(item));
+      }
+
+      return (
+        <div key={item.i} style={{ backgroundColor: item.bgColor }}>
+          {verDescripcion && <span className="text">{item.i}</span>}
+          {blockItem && (
+            <div className="menuItems">
+              <Dropdown menu={{ items }}>
+                <a onClick={(e) => e.preventDefault()}>
+                  <Space>
+                    <DownOutlined />
+                  </Space>
+                </a>
+              </Dropdown>
+            </div>
+          )}
+
+          {renderFurnitureMeasurements(item)}
+          {renderAreaMeasurements(item)}
+        </div>
+      );
+    });
+
+    return updatedLayout;
+  };
+
+  // const generateDOM = () =>
+  //   _.map(layout, (item) => (
+  //     <div key={item.i} style={{ backgroundColor: item.bgColor }}>
+  //       {verDescripcion === true && <span className="text">{item.i}</span>}
+  //       {blockItem === true && (
+  //         <div className="menuItems">
+  //           <Dropdown menu={{ items }}>
+  //             <a onClick={(e) => e.preventDefault()}>
+  //               <Space>
+  //                 <DownOutlined />
+  //               </Space>
+  //             </a>
+  //           </Dropdown>
+  //         </div>
+  //       )}
+
+  //       {item.category === "furniture" && (
+  //         <>{areaFurniture.push(item.width * item.lenght)}</>
+  //       )}
+
+  //       {item.category === "area" && (
+  //         <>{areaStore.push(item.width * item.lenght)}</>
+  //       )}
+
+  //       {measureFurniture && item.category === "furniture" && (
+  //         <>
+  //           <div className="containterMeasureX">
+  //             <div className="measureXLineL"></div>
+  //             <div className="measureXTxt">{item.lenght} mts.</div>
+  //             <div className="measureXLineR"></div>
+  //           </div>
+
+  //           <div className="containterMeasureY">
+  //             <div className="measureYTxt">{item.width} mts.</div>
+  //           </div>
+  //         </>
+  //       )}
+
+  //       {((measureAreaCol && item.category === "area") ||
+  //         (measureAreaCol && item.category === "pilar")) && (
+  //         <>
+  //           <div className="containterMeasureX">
+  //             <div className="measureXLineL"></div>
+  //             <div className="measureXTxt">{item.width} mts</div>
+  //             <div className="measureXLineR"></div>
+  //           </div>
+
+  //           <div className="containterMeasureY">
+  //             <div className="measureYTxt">{item.lenght} mts</div>
+  //           </div>
+  //         </>
+  //       )}
+  //     </div>
+  //   ));
+
   const handleAddItem = (color: string) => {
     const newItem: LayoutItem = {
       x: 0,
@@ -101,6 +203,8 @@ const PlanogramaGeneralRipleyMain: React.FC<Props> = ({
       i: `${layout.length + 1}`,
       bgColor: color,
       category: "",
+      lenght: 0,
+      width: 0,
     };
     setLayout([...layout, newItem]);
   };
@@ -120,6 +224,8 @@ const PlanogramaGeneralRipleyMain: React.FC<Props> = ({
       i: item.i,
       bgColor: "",
       category: item.category,
+      lenght: item.lenght,
+      width: item.width,
     }));
     onLayoutChange(newLayout);
   };
@@ -162,9 +268,26 @@ const PlanogramaGeneralRipleyMain: React.FC<Props> = ({
     },
     {
       key: "3",
-      label: <a onClick={() => itemModalProducts()}>Elminar item</a>,
+      label: <a onClick={() => itemModalProducts()}>Eliminar item</a>,
     },
   ];
+
+  useEffect(() => {
+    if (areaFurniture.length > 0) {
+      const sumAreaFurniture = areaFurniture.reduce(
+        (acumulador, currentValue) => acumulador + currentValue,
+        0
+      );
+      setTotalAreaFurniture(sumAreaFurniture);
+    }
+
+    if (areaStore.length > 0) {
+      const sumAreaStore = areaStore.reduce(
+        (acumulador, currentValue) => acumulador + currentValue
+      );
+      setTotalAreaStore(sumAreaStore);
+    }
+  }, [areaFurniture]);
 
   return (
     <>
@@ -193,54 +316,129 @@ const PlanogramaGeneralRipleyMain: React.FC<Props> = ({
           ]}
         />
       )}
-      <div className="contentSwitch">
-        <div className="switchDescription">
-          <Switch
-            defaultChecked={verDescripcion}
-            onChange={handleDescripcionChange}
-            size="small"
-          />
-          Ver Descripcion
-        </div>
 
-        <div className="switchDescription">
-          <Switch
-            defaultChecked={blockItem}
-            onChange={handleBlokItemChange}
-            size="small"
-          />
-          Bloquear items
-        </div>
+      <Row gutter={12}>
+        <Col span={6}>
+          <Card bordered={false}>
+            <Statistic
+              title="MEDIDAS"
+              value={`7.50 x 8.70`}
+              precision={2}
+              valueStyle={{ color: "#cf1322" }}
+              prefix={<GatewayOutlined />}
+              suffix="M"
+            />
+          </Card>
+        </Col>
 
-        <div className="switchDescription">
-          <Switch
-            defaultChecked={measureFurniture}
-            onChange={handleMeasureChange}
-            size="small"
-          />
-          Medidas en Mobiliario
-        </div>
-        <div className="switchDescription">
-          <Switch
-            defaultChecked={measureAreaCol}
-            onChange={handleMeasureAreaColChange}
-            size="small"
-          />
-          Medidas en Area y Columna
-        </div>
-      </div>
+        <Col span={6}>
+          <Card bordered={false}>
+            <Statistic
+              title="TOTAL METROS CUADRADOS LG"
+              value={totalAreaStore}
+              precision={2}
+              valueStyle={{ color: "#cf1322" }}
+              prefix={<GatewayOutlined />}
+              suffix="M&#178;"
+            />
+          </Card>
+        </Col>
 
-      <div>
-        <button onClick={() => handleAddItem("rgb(182, 52, 93)")}>
-          Agregar Item
-        </button>
-        <button onClick={() => handleAddItem("rgba(182, 52, 93, 0.52)")}>
-          Agregar Mobiliario
-        </button>
-        <button onClick={() => handleAddItem("rgb(188 172 177 / 82%)")}>
-          Agregar Pilar
-        </button>
-      </div>
+        <Col span={6}>
+          <Card bordered={false}>
+            <Statistic
+              title="TOTAL METROS CUADRADOS USADOS"
+              value={totalAreaStore - 8.38}
+              precision={2}
+              valueStyle={{ color: "#cf1322" }}
+              prefix={<GatewayOutlined />}
+              suffix="M&#178;"
+            />
+          </Card>
+        </Col>
+
+        <Col span={6}>
+          <div style={{ width: "100%", padding: "1rem" }}>
+            <PlusCircleOutlined /> AGREGAR:
+          </div>
+          <Card bordered={false}>
+            <Row gutter={12}>
+              <Col span={24}>
+                <Flex gap="small">
+                  <Button
+                    type="primary"
+                    onClick={() => handleAddItem("rgba(182, 52, 93, 0.52)")}
+                    block
+                  >
+                    Mobiliario
+                  </Button>
+                  <Button
+                    type="primary"
+                    onClick={() => handleAddItem("rgb(188 172 177 / 82%)")}
+                    block
+                  >
+                    Pilar
+                  </Button>
+
+                  <Button
+                    type="primary"
+                    onClick={() => handleAddItem("rgb(182, 52, 93)")}
+                    block
+                  >
+                    Item
+                  </Button>
+                </Flex>
+              </Col>
+            </Row>
+          </Card>
+        </Col>
+      </Row>
+
+      <Row gutter={12}>
+        <Col span={4}>
+          <div className="switchDescription">
+            <Switch
+              defaultChecked={verDescripcion}
+              onChange={handleDescripcionChange}
+              size="small"
+            />
+            Ver Descripcion
+          </div>
+        </Col>
+        <Col span={4}>
+          <div className="switchDescription">
+            <Switch
+              defaultChecked={blockItem}
+              onChange={handleBlokItemChange}
+              size="small"
+            />
+            Bloquear items
+          </div>
+        </Col>
+
+        <Col span={4}>
+          <div className="switchDescription">
+            <Switch
+              defaultChecked={measureFurniture}
+              onChange={handleMeasureChange}
+              size="small"
+            />
+            Medidas en Mobiliario
+          </div>
+        </Col>
+
+        <Col span={4}>
+          <div className="switchDescription">
+            <Switch
+              defaultChecked={measureAreaCol}
+              onChange={handleMeasureAreaColChange}
+              size="small"
+            />
+            Medidas en Area y Columna
+          </div>
+        </Col>
+      </Row>
+
       <ReactGridLayout
         cols={cols}
         layout={layout}
