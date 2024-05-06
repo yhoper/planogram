@@ -12,13 +12,13 @@ const CollapseComponent = () => {
     {
       key: "1",
       label: "Home Entertainment",
-      children: <AntTabs/>,
+      children: <AntTabs />,
     },
     {
       key: "3",
       label: "Home Appliances",
       children: <p>{text}</p>,
-    }
+    },
   ];
 
   return (

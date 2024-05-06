@@ -21,6 +21,16 @@ import type { MenuProps } from "antd";
 import { Dropdown, Space } from "antd";
 import ModalWithProduct from "./modalWithProduct";
 
+import icon_oled_64_normal from "../assets/icons/icon_oled_64_normal.svg";
+import icon_qned_64_normal from "../assets/icons/icon_qned_64_normal.svg";
+import icon_nanocell_64_normal from "../assets/icons/icon_nanocell_64_normal.svg";
+import icon_8k_uhd_tvs_64_normal from "../assets/icons/icon_8k_uhd_tvs_64_normal.svg";
+import icon_ultrabig_64_normal from "../assets/icons/icon_ultrabig_64_normal.svg";
+import icon_4kuhd_64_normal from "../assets/icons/icon_4kuhd_64_normal.svg";
+import icon_smarttv_64_normal from "../assets/icons/icon_smarttv_64_normal.svg";
+import icon_soundbars_64_normal from "../assets/icons/icon_soundbars_64_normal.svg";
+import icon_oled_evo_64_normal from "../assets/icons/icon_oled_evo_64_normal.svg";
+
 const ReactGridLayout = WidthProvider(RGL);
 
 const PlanogramaGeneralRipley: React.FC<Props> = ({
@@ -33,7 +43,6 @@ const PlanogramaGeneralRipley: React.FC<Props> = ({
   compactType = "vertical",
   preventCollision = false,
   verticalCompact = false,
-  allowOverlapOption = true,
 }) => {
   const [layout, setLayout] = useState<LayoutItem[]>([]);
 
@@ -50,8 +59,6 @@ const PlanogramaGeneralRipley: React.FC<Props> = ({
         {verDescripcion === true && <span className="text">{item.i}</span>}
         {blockItem === true && (
           <div className="menuItems">
-            {/* <ExpandAltOutlined onClick={() => handleRemoveItem(item.i)} /> */}
-
             <Dropdown menu={{ items }}>
               <a onClick={(e) => e.preventDefault()}>
                 <Space>
@@ -72,14 +79,10 @@ const PlanogramaGeneralRipley: React.FC<Props> = ({
       i: `${layout.length + 1}`,
       bgColor: color,
       category: "",
+      lenght: 0,
+      width: 0,
     };
     setLayout([...layout, newItem]);
-  };
-
-  const handleRemoveItem = (id: string) => {
-    // const updatedLayout = layout.filter((item) => item.i !== id);
-    // setLayout(updatedLayout);
-    alert(id);
   };
 
   const onLayoutChangeHandler = (layout: LayoutItem[]): void => {
@@ -91,6 +94,8 @@ const PlanogramaGeneralRipley: React.FC<Props> = ({
       i: item.i,
       bgColor: "",
       category: item.category,
+      width: item.width,
+      lenght: item.lenght,
     }));
     onLayoutChange(newLayout);
   };
@@ -141,15 +146,15 @@ const PlanogramaGeneralRipley: React.FC<Props> = ({
           isOpen={isOpenProduct}
           onRequestClose={() => setIsOpenProduct(false)}
           images={[
-            "https://www.lg.com/content/dam/lge/common/common-icon/new-product_icon/icon_oled_64_normal.svg",
-            "https://www.lg.com/content/dam/lge/common/common-icon/new-product_icon/icon_qned_64_normal.svg",
-            "https://www.lg.com/content/dam/lge/common/common-icon/new-product_icon/icon_nanocell_64_normal.svg",
-            "https://www.lg.com/content/dam/lge/common/common-icon/new-product_icon/icon_8k-uhd-tvs_64_normal.svg",
-            "https://www.lg.com/content/dam/lge/common/common-icon/new-product_icon/icon_ultrabig_64_normal.svg",
-            "https://www.lg.com/content/dam/lge/common/common-icon/new-product_icon/icon_4kuhd_64_normal.svg",
-            "https://www.lg.com/content/dam/lge/common/common-icon/new-product_icon/icon_smarttv_64_normal.svg",
-            "https://www.lg.com/content/dam/lge/common/common-icon/new-product_icon/icon_soundbars_64_normal.svg",
-            "https://www.lg.com/content/dam/lge/common/common-icon/new-product_icon/icon_oled-evo_64_normal.svg",
+            icon_oled_64_normal,
+            icon_qned_64_normal,
+            icon_nanocell_64_normal,
+            icon_8k_uhd_tvs_64_normal,
+            icon_ultrabig_64_normal,
+            icon_4kuhd_64_normal,
+            icon_smarttv_64_normal,
+            icon_soundbars_64_normal,
+            icon_oled_evo_64_normal,
           ]}
         />
       )}
@@ -173,17 +178,6 @@ const PlanogramaGeneralRipley: React.FC<Props> = ({
         </div>
       </div>
 
-      <div>
-        <button onClick={() => handleAddItem("rgb(182, 52, 93)")}>
-          Agregar Item
-        </button>
-        <button onClick={() => handleAddItem("rgba(182, 52, 93, 0.52)")}>
-          Agregar Mobiliario
-        </button>
-        <button onClick={() => handleAddItem("rgb(188 172 177 / 82%)")}>
-          Agregar Pilar
-        </button>
-      </div>
       <ReactGridLayout
         cols={cols}
         layout={layout}
@@ -196,7 +190,7 @@ const PlanogramaGeneralRipley: React.FC<Props> = ({
         preventCollision={preventCollision}
         verticalCompact={verticalCompact}
         useCSSTransforms={true}
-        allowOverlap={allowOverlapOption}
+        allowOverlap={true}
       >
         {generateDOM()}
       </ReactGridLayout>

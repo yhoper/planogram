@@ -5,7 +5,6 @@ import {
   MenuUnfoldOutlined,
   UserOutlined,
   BarChartOutlined,
-  SettingOutlined,
   ProductOutlined,
 } from "@ant-design/icons";
 
@@ -87,7 +86,6 @@ const LayoutComponent: React.FC = () => {
                 value={selectedStore}
               >
                 <Option value="ripley">Ripley</Option>
-                
               </Select>
 
               <Select
@@ -154,11 +152,6 @@ const LayoutComponent: React.FC = () => {
               key: "model",
               icon: <ProductOutlined style={{ color: "#000" }} />,
               label: "Modelos",
-            },
-            {
-              key: "settings",
-              icon: <SettingOutlined style={{ color: "#000" }} />,
-              label: "Configuración",
             },
           ]}
         />

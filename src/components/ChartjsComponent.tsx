@@ -30,7 +30,12 @@ const ChartjsComponent: React.FC<{ onGoToModels: () => void }> = ({
                   </span>
                 </Col>
                 <Col span={24}>
-                  <span style={{ fontSize: "20px", color: "rgba(20, 42, 159, 0.87)" }}>
+                  <span
+                    style={{
+                      fontSize: "20px",
+                      color: "rgba(20, 42, 159, 0.87)",
+                    }}
+                  >
                     SAMSUNG 38%
                   </span>
                 </Col>
@@ -58,7 +63,12 @@ const ChartjsComponent: React.FC<{ onGoToModels: () => void }> = ({
                   </span>
                 </Col>
                 <Col span={24}>
-                  <span style={{ fontSize: "20px", color: "rgba(20, 42, 159, 0.87)" }}>
+                  <span
+                    style={{
+                      fontSize: "20px",
+                      color: "rgba(20, 42, 159, 0.87)",
+                    }}
+                  >
                     SAMSUNG 40%
                   </span>
                 </Col>
@@ -86,7 +96,12 @@ const ChartjsComponent: React.FC<{ onGoToModels: () => void }> = ({
                   </span>
                 </Col>
                 <Col span={24}>
-                  <span style={{ fontSize: "20px", color: "rgba(20, 42, 159, 0.87)" }}>
+                  <span
+                    style={{
+                      fontSize: "20px",
+                      color: "rgba(20, 42, 159, 0.87)",
+                    }}
+                  >
                     SAMSUNG 35%
                   </span>
                 </Col>
@@ -114,7 +129,12 @@ const ChartjsComponent: React.FC<{ onGoToModels: () => void }> = ({
                   </span>
                 </Col>
                 <Col span={24}>
-                  <span style={{ fontSize: "20px", color: "rgba(20, 42, 159, 0.87)" }}>
+                  <span
+                    style={{
+                      fontSize: "20px",
+                      color: "rgba(20, 42, 159, 0.87)",
+                    }}
+                  >
                     SAMSUNG 40%
                   </span>
                 </Col>

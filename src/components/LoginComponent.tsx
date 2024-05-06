@@ -1,12 +1,11 @@
-import Welcome from "./Welcome"
-
+import Welcome from "./Welcome";
 
 const LoginComponent = () => {
   return (
     <>
       <Welcome></Welcome>
     </>
-  )
-}
+  );
+};
 
-export default LoginComponent
+export default LoginComponent;

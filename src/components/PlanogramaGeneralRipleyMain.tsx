@@ -4,7 +4,7 @@ import RGL, { WidthProvider } from "react-grid-layout";
 import { generateLayoutRipleyMain } from "../utils/layoutUtilsRipleyAraucoMain.tsx";
 import { LayoutItem } from "../interfaces/LayoutItem.tsx";
 import { Props } from "../interfaces/Props.tsx";
-import { Divider, Switch } from "antd";
+import { Switch } from "antd";
 import "react-grid-layout/css/styles.css";
 import "react-resizable/css/styles.css";
 import ModalWithCarousel from "./modalWithCarousel.tsx";
@@ -20,12 +20,9 @@ import type { MenuProps } from "antd";
 import { Dropdown, Space } from "antd";
 import ModalWithProduct from "./modalWithProduct.tsx";
 
-import ChartDoughnut from "./ChartCard/ChartDoughnut";
-import { Card, Col, Row, Statistic, Button, Flex, Tooltip } from "antd";
+import { Card, Col, Row, Statistic, Button, Flex } from "antd";
 import {
   DownOutlined,
-  SearchOutlined,
-  ArrowDownOutlined,
   PlusCircleOutlined,
   GatewayOutlined,
 } from "@ant-design/icons";
@@ -42,7 +39,6 @@ const PlanogramaGeneralRipleyMain: React.FC<Props> = ({
   compactType = "vertical",
   preventCollision = false,
   verticalCompact = false,
-  allowOverlapOption = true,
 }) => {
   const [layout, setLayout] = useState<LayoutItem[]>([]);
 
@@ -52,7 +48,7 @@ const PlanogramaGeneralRipleyMain: React.FC<Props> = ({
   const [verDescripcion, setVerDescripcion] = useState(true);
 
   const areaFurniture: number[] = [];
-  const [totalAreaFurniture, setTotalAreaFurniture] = useState(0);
+  const [, setTotalAreaFurniture] = useState(0);
   const areaStore: number[] = [];
   const [totalAreaStore, setTotalAreaStore] = useState(0);
   useEffect(() => {
@@ -60,7 +56,7 @@ const PlanogramaGeneralRipleyMain: React.FC<Props> = ({
   }, []);
 
   const generateDOM = () => {
-    const renderAreaMeasurements = (item) => {
+    const renderAreaMeasurements = (item: LayoutItem) => {
       if (
         (measureAreaCol && item.category === "area") ||
         (measureAreaCol && item.category === "pilar")
@@ -82,7 +78,7 @@ const PlanogramaGeneralRipleyMain: React.FC<Props> = ({
       return null;
     };
 
-    const renderFurnitureMeasurements = (item) => {
+    const renderFurnitureMeasurements = (item: LayoutItem) => {
       if (measureFurniture && item.category === "furniture") {
         return (
           <>
@@ -101,7 +97,7 @@ const PlanogramaGeneralRipleyMain: React.FC<Props> = ({
       return null;
     };
 
-    const calculateArea = (item) => {
+    const calculateArea = (item: LayoutItem) => {
       if (item.category === "furniture" || item.category === "area") {
         return item.width * item.lenght;
       }
@@ -109,10 +105,18 @@ const PlanogramaGeneralRipleyMain: React.FC<Props> = ({
     };
 
     const updatedLayout = layout.map((item) => {
+      let area;
       if (item.category === "furniture") {
-        areaFurniture.push(calculateArea(item));
-      } else if (item.category === "area") {
-        areaStore.push(calculateArea(item));
+        area = calculateArea(item);
+        if (area !== null) {
+          areaFurniture.push(area);
+        }
+      }
+      if (item.category === "area") {
+        area = calculateArea(item);
+        if (area !== null) {
+          areaStore.push(area);
+        }
       }
 
       return (
@@ -138,62 +142,6 @@ const PlanogramaGeneralRipleyMain: React.FC<Props> = ({
 
     return updatedLayout;
   };
-
-  // const generateDOM = () =>
-  //   _.map(layout, (item) => (
-  //     <div key={item.i} style={{ backgroundColor: item.bgColor }}>
-  //       {verDescripcion === true && <span className="text">{item.i}</span>}
-  //       {blockItem === true && (
-  //         <div className="menuItems">
-  //           <Dropdown menu={{ items }}>
-  //             <a onClick={(e) => e.preventDefault()}>
-  //               <Space>
-  //                 <DownOutlined />
-  //               </Space>
-  //             </a>
-  //           </Dropdown>
-  //         </div>
-  //       )}
-
-  //       {item.category === "furniture" && (
-  //         <>{areaFurniture.push(item.width * item.lenght)}</>
-  //       )}
-
-  //       {item.category === "area" && (
-  //         <>{areaStore.push(item.width * item.lenght)}</>
-  //       )}
-
-  //       {measureFurniture && item.category === "furniture" && (
-  //         <>
-  //           <div className="containterMeasureX">
-  //             <div className="measureXLineL"></div>
-  //             <div className="measureXTxt">{item.lenght} mts.</div>
-  //             <div className="measureXLineR"></div>
-  //           </div>
-
-  //           <div className="containterMeasureY">
-  //             <div className="measureYTxt">{item.width} mts.</div>
-  //           </div>
-  //         </>
-  //       )}
-
-  //       {((measureAreaCol && item.category === "area") ||
-  //         (measureAreaCol && item.category === "pilar")) && (
-  //         <>
-  //           <div className="containterMeasureX">
-  //             <div className="measureXLineL"></div>
-  //             <div className="measureXTxt">{item.width} mts</div>
-  //             <div className="measureXLineR"></div>
-  //           </div>
-
-  //           <div className="containterMeasureY">
-  //             <div className="measureYTxt">{item.lenght} mts</div>
-  //           </div>
-  //         </>
-  //       )}
-  //     </div>
-  //   ));
-
   const handleAddItem = (color: string) => {
     const newItem: LayoutItem = {
       x: 0,
@@ -207,12 +155,6 @@ const PlanogramaGeneralRipleyMain: React.FC<Props> = ({
       width: 0,
     };
     setLayout([...layout, newItem]);
-  };
-
-  const handleRemoveItem = (id: string) => {
-    // const updatedLayout = layout.filter((item) => item.i !== id);
-    // setLayout(updatedLayout);
-    alert(id);
   };
 
   const onLayoutChangeHandler = (layout: LayoutItem[]): void => {
@@ -385,7 +327,7 @@ const PlanogramaGeneralRipleyMain: React.FC<Props> = ({
                     onClick={() => handleAddItem("rgb(182, 52, 93)")}
                     block
                   >
-                    Item
+                    Producto
                   </Button>
                 </Flex>
               </Col>
@@ -451,7 +393,7 @@ const PlanogramaGeneralRipleyMain: React.FC<Props> = ({
         preventCollision={preventCollision}
         verticalCompact={verticalCompact}
         useCSSTransforms={true}
-        allowOverlap={allowOverlapOption}
+        allowOverlap={true}
       >
         {generateDOM()}
       </ReactGridLayout>

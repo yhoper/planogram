@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import bg from "../assets/lg_bg.avif";
 const Welcome = () => {
   return (
     <div>
@@ -15,7 +15,7 @@ const Welcome = () => {
           <div className="download_assets">
             <img
               style={{ width: "100%" }}
-              src="https://www.lg.com/content/dam/lge/global/our-brand/src/mocks/bs0002/lg_electronics_logo_visual_background.png"
+              src={bg}
               alt=""
               className="download_assets__thumb"
             />
