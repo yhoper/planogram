@@ -178,6 +178,17 @@ const PlanogramaGeneralRipley: React.FC<Props> = ({
         </div>
       </div>
 
+      <div>
+        <button onClick={() => handleAddItem("rgb(182, 52, 93)")}>
+          Agregar Item
+        </button>
+        <button onClick={() => handleAddItem("rgba(182, 52, 93, 0.52)")}>
+          Agregar Mobiliario
+        </button>
+        <button onClick={() => handleAddItem("rgb(188 172 177 / 82%)")}>
+          Agregar Pilar
+        </button>
+      </div>
       <ReactGridLayout
         cols={cols}
         layout={layout}
