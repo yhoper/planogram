@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Layout, Menu, Button, Select } from "antd";
+import { Layout, Menu, Button, Select, Flex, Segmented } from "antd";
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
@@ -12,6 +12,8 @@ import CollapseComponent from "./CollapseComponent";
 import { Location } from "../interfaces/types";
 import ChartjsComponent from "./ChartjsComponent";
 import ModelComponet from "./ModelComponet";
+import { useTranslation } from "react-i18next";
+import DropdownLanguaje from "./DropdowndLanguajeComponent";
 
 interface CustomTheme {
   colorBgContainer: string;
@@ -32,6 +34,7 @@ const LayoutComponent: React.FC = () => {
   const [store, setStore] = useState<string | undefined>();
   const [location, setLocation] = useState<string | undefined>();
   const [currentMenuItem, setCurrentMenuItem] = useState<string>("dashboard");
+  const { t } = useTranslation();
 
   const handleStoreChange = (value: string) => {
     setStore(value);
@@ -163,14 +166,20 @@ const LayoutComponent: React.FC = () => {
             background: customTheme.colorBgContainer,
           }}
         >
-          <Button
-            type="text"
-            icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-            onClick={() => setCollapsed(!collapsed)}
-            style={{ fontSize: "16px", width: 64, height: 64 }}
-          />
+          <Flex gap="middle" vertical>
+            <Flex vertical={false} justify="space-between">
+              <Button
+                type="text"
+                icon={collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+                onClick={() => setCollapsed(!collapsed)}
+                style={{ fontSize: "16px", width: 64, height: 64 }}
+              />
+
+              <DropdownLanguaje />
+            </Flex>
+          </Flex>
         </Layout.Header>
-        {/* <Layout.Content style={{ margin: "24px 16px", minHeight: 280 }}> */}
+
         <Layout.Content
           style={{
             margin: "24px 16px",
@@ -180,6 +189,8 @@ const LayoutComponent: React.FC = () => {
             borderRadius: customTheme.borderRadiusLG,
           }}
         >
+          <p>{t("distribution")}</p>
+          <p>{t("squareMeters")}</p>
           {getContent()}
         </Layout.Content>
       </Layout>
