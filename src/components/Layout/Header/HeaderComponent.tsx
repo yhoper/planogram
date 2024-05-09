@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import type { MenuProps } from "antd";
 import { CustomTheme } from "../../../types/layout/LayoutTheme";
 import { Layout, Button, Flex } from "antd";
@@ -17,7 +17,6 @@ const customTheme: CustomTheme = {
 
 const Header: React.FC<HeaderProps> = ({}) => {
   const { collapsed, setCollapsed } = useCollapseStore();
-  //const [collapsed, setCollapsed] = useState(false);
   return (
     <Layout.Header
       style={{

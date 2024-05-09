@@ -14,12 +14,12 @@ const AntTabs = () => {
     {
       key: "1",
       label: "Ripley Main",
-      children: <PlanogramaGeneralRipleyMain allowOverlapOption={false}/>,
+      children: <PlanogramaGeneralRipleyMain allowOverlapOption={false} />,
     },
     {
       key: "2",
       label: "Ripley General",
-      children: <PlanogramaGeneralRipley allowOverlapOption={false}/>,
+      children: <PlanogramaGeneralRipley allowOverlapOption={false} />,
     },
     {
       key: "3",

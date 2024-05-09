@@ -8,14 +8,13 @@ import { Layout, Menu } from "antd";
 import { useCollapseStore } from "../../../stores/Layout/collapseStore";
 
 const SidebarComponent = () => {
-  const { collapsed,  } = useCollapseStore();
+  const { collapsed } = useCollapseStore();
   const [, setCurrentMenuItem] = useState<string>("dashboard");
 
   const handleMenuItemClick = (key: string) => {
     setCurrentMenuItem(key);
   };
 
-  
   return (
     <Layout.Sider trigger={null} collapsible collapsed={collapsed}>
       <div className="demo-logo-vertical" />
