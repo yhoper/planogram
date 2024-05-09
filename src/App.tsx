@@ -8,7 +8,10 @@ import enTranslation from "./locales/en.json";
 import esTranslation from "./locales/es.json";
 
 const Login = lazy(() => import("./components/LoginComponent"));
-const LayoutComponent = lazy(() => import("./components/LayoutComponent"));
+//const LayoutComponent = lazy(() => import("./components/LayoutComponent"));
+const Content = lazy(
+  () => import("./components/Layout/Content/ContentComponent")
+);
 
 interface RouteOptions {
   exact: boolean;
@@ -36,11 +39,7 @@ const App: React.FC = () => {
         <Router>
           <Routes>
             <Route {...options} path="/lg/" element={<Login />} />
-            <Route
-              {...options}
-              path="/lg/dashboard"
-              element={<LayoutComponent />}
-            />
+            <Route {...options} path="/lg/dashboard" element={<Content />} />
           </Routes>
         </Router>
       </Suspense>

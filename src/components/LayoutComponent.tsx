@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Layout, Menu, Button, Select, Flex, Segmented } from "antd";
+import { Layout, Menu, Button, Select, Flex } from "antd";
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
