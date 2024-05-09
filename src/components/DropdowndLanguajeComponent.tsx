@@ -2,7 +2,6 @@ import React from "react";
 import { DownOutlined, SmileOutlined } from "@ant-design/icons";
 import { Dropdown, Space, MenuProps } from "antd";
 
-
 const items: MenuProps["items"] = [
   {
     key: "1",
