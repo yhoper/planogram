@@ -45,6 +45,11 @@ const SidebarComponent = () => {
             icon: <ProductOutlined style={{ color: "#000" }} />,
             label: t("txtModels"),
           },
+          {
+            key: "planogram",
+            icon: <ProductOutlined style={{ color: "#000" }} />,
+            label: t("txtPlanogram"),
+          },
         ]}
       />
     </Layout.Sider>

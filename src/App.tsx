@@ -4,7 +4,7 @@ import "./App.css";
 import { initReactI18next } from "react-i18next";
 import i18n from "i18next";
 
-import esTranslation from "./shared/i18n/translations/en.json";
+import esTranslation from "./shared/i18n/translations/es.json";
 import enTranslation from "./shared/i18n/translations/en.json";
 import koTranslation from "./shared/i18n/translations/ko.json";
 
