@@ -3,7 +3,7 @@ import type { MenuProps } from "antd";
 import { CustomTheme } from "../../../types/layout/LayoutTheme";
 import { Layout, Button, Flex } from "antd";
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
-import { MenuLanguages } from "../DropdownLanguajes/";
+import { MenuLanguages } from "../DropdownLanguages";
 import { useCollapseStore } from "../../../shared/state/layout/collapseMenu/collapseStore";
 
 interface HeaderProps {

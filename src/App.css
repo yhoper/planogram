@@ -1866,8 +1866,6 @@ div#visual-logo {
   padding-bottom: 3rem;
 }
 
-
-
 .containterMeasureX {
   position: absolute;
   width: 100%;
@@ -2012,4 +2010,8 @@ div#visual-logo {
 
 .ant-space.css-dev-only-do-not-override-mzwlov.ant-space-horizontal.ant-space-align-center.ant-space-gap-row-small.ant-space-gap-col-small {
   color: #fff;
+}
+
+.menuLanguages {
+  padding-right: 2dvh;
 }

@@ -43,12 +43,14 @@ const DropdownLanguage: React.FC = () => {
   };
 
   return (
-    <Dropdown menu={menuProps} trigger={["click"]}>
-      <Button>
-        {currentLanguageText}
-        <DownOutlined />
-      </Button>
-    </Dropdown>
+    <div className="menuLanguages">
+      <Dropdown menu={menuProps} trigger={["click"]}>
+        <Button>
+          {currentLanguageText}
+          <DownOutlined />
+        </Button>
+      </Dropdown>
+    </div>
   );
 };
 
