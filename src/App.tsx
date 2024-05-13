@@ -4,11 +4,11 @@ import "./App.css";
 import { initReactI18next } from "react-i18next";
 import i18n from "i18next";
 
-import enTranslation from "./locales/en.json";
-import esTranslation from "./locales/es.json";
+import esTranslation from "./shared/i18n/translations/en.json";
+import enTranslation from "./shared/i18n/translations/en.json";
+import koTranslation from "./shared/i18n/translations/ko.json";
 
 const Login = lazy(() => import("./components/LoginComponent"));
-//const LayoutComponent = lazy(() => import("./components/LayoutComponent"));
 const Content = lazy(
   () => import("./components/Layout/Content/ContentComponent")
 );
@@ -26,8 +26,9 @@ const App: React.FC = () => {
     resources: {
       en: { translation: enTranslation },
       es: { translation: esTranslation },
+      ko: { translation: koTranslation },
     },
-    lng: "es", // Establecer el idioma predeterminado aquí
+    lng: "es",
     interpolation: {
       escapeValue: false,
     },

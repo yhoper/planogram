@@ -5,9 +5,11 @@ import {
   ProductOutlined,
 } from "@ant-design/icons";
 import { Layout, Menu } from "antd";
-import { useCollapseStore } from "../../../stores/Layout/collapseStore";
+import { useCollapseStore } from "../../../shared/state/layout/collapseMenu/collapseStore";
+import { useTranslation } from "react-i18next";
 
 const SidebarComponent = () => {
+  const { t } = useTranslation();
   const { collapsed } = useCollapseStore();
   const [, setCurrentMenuItem] = useState<string>("dashboard");
 
@@ -31,17 +33,17 @@ const SidebarComponent = () => {
           {
             key: "dashboard",
             icon: <BarChartOutlined style={{ color: "#000" }} />,
-            label: "Dashboard",
+            label: t("txtDashboard"),
           },
           {
             key: "lg",
             icon: <UserOutlined style={{ color: "#000" }} />,
-            label: "LG",
+            label: t("LG"),
           },
           {
             key: "model",
             icon: <ProductOutlined style={{ color: "#000" }} />,
-            label: "Modelos",
+            label: t("txtModels"),
           },
         ]}
       />
