@@ -3,7 +3,7 @@ import type { MenuProps } from "antd";
 import { CustomTheme } from "../../../types/layout/LayoutTheme";
 import { Layout, Button, Flex } from "antd";
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
-import { MenuLanguajes } from "../DropdownLanguajes/";
+import { MenuLanguages } from "../DropdownLanguajes/";
 import { useCollapseStore } from "../../../shared/state/layout/collapseMenu/collapseStore";
 
 interface HeaderProps {
@@ -33,7 +33,7 @@ const Header: React.FC<HeaderProps> = ({}) => {
             style={{ fontSize: "16px", width: 64, height: 64 }}
           />
 
-          <MenuLanguajes />
+          <MenuLanguages />
         </Flex>
       </Flex>
     </Layout.Header>

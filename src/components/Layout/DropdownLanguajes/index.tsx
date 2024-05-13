@@ -1,1 +1,1 @@
-export { default as MenuLanguajes } from "./DropdownLanguajes";
+export { default as MenuLanguages } from "./DropdownLanguajes";
