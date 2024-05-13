@@ -7,15 +7,20 @@ import {
 import { Layout, Menu } from "antd";
 import { useCollapseStore } from "../../../shared/state/layout/collapseMenu/collapseStore";
 import { useTranslation } from "react-i18next";
+import { useSidebarState } from "../../../shared/state/layout/sidebarMenu/sidebarStore";
 
 const SidebarComponent = () => {
   const { t } = useTranslation();
   const { collapsed } = useCollapseStore();
   const [, setCurrentMenuItem] = useState<string>("dashboard");
+  const { currentSection, setCurrentSection } = useSidebarState();
 
   const handleMenuItemClick = (key: string) => {
     setCurrentMenuItem(key);
+    setCurrentSection(key);
   };
+
+  
 
   return (
     <Layout.Sider trigger={null} collapsible collapsed={collapsed}>
@@ -27,7 +32,7 @@ const SidebarComponent = () => {
       <Menu
         theme="dark"
         mode="inline"
-        defaultSelectedKeys={["1"]}
+        defaultSelectedKeys={[currentSection]}
         onClick={({ key }) => handleMenuItemClick(key.toString())}
         items={[
           {
