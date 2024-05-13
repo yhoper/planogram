@@ -8,9 +8,9 @@ import esTranslation from "./shared/i18n/translations/es.json";
 import enTranslation from "./shared/i18n/translations/en.json";
 import koTranslation from "./shared/i18n/translations/ko.json";
 
-const Login = lazy(() => import("./components/LoginComponent"));
+const Login = lazy(() => import("./pages/Login"));
 
-//const Tablero = lazy(() => import("./pages/Dashboard"));
+const Dashboard = lazy(() => import("./pages/Dashboard"));
 
 interface RouteOptions {
   exact: boolean;
@@ -39,7 +39,11 @@ const App: React.FC = () => {
         <Router>
           <Routes>
             <Route {...options} path="/lg/" element={<Login />} />
-            {/* <Route {...options} path="/lg/dashboard" element={<Tablero />} /> */}
+            <Route
+              {...options}
+              path="/lg/dashboard"
+              element={<Dashboard />}
+            />
           </Routes>
         </Router>
       </Suspense>

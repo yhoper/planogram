@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import bg from "../assets/lg_bg.avif";
-const Welcome = () => {
+import bg from "../../assets/lg_bg.avif";
+const Login = () => {
   return (
     <div>
       <div id="visual-logo" className="visual__top">
@@ -12,7 +12,7 @@ const Welcome = () => {
           </Link>
         </div>
         <div className="visual-innner">
-          <div className="download_assets">
+          <div className="download_assetss">
             <img
               style={{ width: "100%" }}
               src={bg}
@@ -26,4 +26,4 @@ const Welcome = () => {
   );
 };
 
-export default Welcome;
+export default Login;
