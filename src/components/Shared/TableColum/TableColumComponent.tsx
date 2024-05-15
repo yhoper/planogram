@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { TableColumnsType, TableProps, Space, Table } from "antd";
 import { useTranslation } from "react-i18next";
@@ -6,14 +6,8 @@ import { useTranslation } from "react-i18next";
 import { DataType } from "./interface";
 import { Link } from "react-router-dom";
 
-interface Sorts {
-  columnKey: string;
-  order: "ascend" | "descend";
-}
-
 const TableColumComponent: React.FC = () => {
   const { t } = useTranslation();
-  const [sortedInfo, setSortedInfo] = useState<Sorts>();
 
   const columns: TableColumnsType<DataType> = [
     {
