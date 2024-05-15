@@ -7,5 +7,14 @@
   "txtSpanish": "Español",
   "txtEnglish": "Ingles",
   "txtKorean": "Koreano",
-  "txtPlanogram": "Planograma"
+  "txtPlanogram": "Planograma",
+  "txtStore": "Tienda",
+  "txtAddress": "Ubicación",
+  "txtCity": "Región",
+  "txtState": "Comuna",
+  "txtAction": "Acción",
+  "txtCreate": "Crear",
+  "txtView": "Ver",
+  "txtUpdate": "Actualizar",
+  "txtDelete": "Eliminar"
 }

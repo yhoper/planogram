@@ -7,5 +7,14 @@
   "txtSpanish": "스페인어",
   "txtEnglish": "영어",
   "txtKorean": "한국어",
-  "txtPlanogram": "플래노그램"
+  "txtPlanogram": "플래노그램",
+  "txtStore": "상점",
+  "txtAddress": "주소",
+  "txtCity": "도시",
+  "txtState": "주",
+  "txtAction": "동작",
+  "txtCreate": "만들기",
+  "txtView": "보기",
+  "txtUpdate": "업데이트",
+  "txtDelete": "삭제"
 }

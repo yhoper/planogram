@@ -39,11 +39,7 @@ const App: React.FC = () => {
         <Router>
           <Routes>
             <Route {...options} path="/lg/" element={<Login />} />
-            <Route
-              {...options}
-              path="/lg/dashboard"
-              element={<Dashboard />}
-            />
+            <Route {...options} path="/lg/dashboard" element={<Dashboard />} />
           </Routes>
         </Router>
       </Suspense>
